@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0px;
+            overflow: hidden;
+        }
+
+        .container {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 2fr 6fr;
+        }
+
+        .left {
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .right {
+            border: 1px solid black;
+        }
+
+        .container .left a {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            font-weight: bold;
+            width: 80%;
+            margin: 20px;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        #mainhead {
+            background-color: blue;
+            height: 100px;
+            margin: 0px;
+            display: flex;
+            position: relative;
+            text-align: center;
+            color: white;
+
+        }
+
+        #img {
+            height: 100px;
+            width: 150px;
+            background-image: url(./img.png);
+            background-size: cover;
+            margin-right: 20px;
+        }
+
+        .one {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+
+        }
+
+        h2 {
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            color: white;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        .box {
+            width: 240px;
+            height: 100px;
+            border: 2px solid black;
+            text-align: center;
+            justify-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            font-size: 20px;
+            font-weight: bolder;
+
+        }
+        .left a:hover{
+            color: blue;
+            background-color: white;
+            border: 2px solid black;
+        }
+
+        .box :nth-child(2) {
+            color: green;
+        }
+
+        table {
+            margin: 20px;
+            width: 96%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        table button {
+
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 14px;
+            margin-right: 4px;
+
+        }
+        table button:hover {
+            background-color: #0056b3;
+          }
+
+        .tableimg
+        {
+            display: grid;
+            grid-template-columns: 2fr 2fr;
+        }
+        .tableimg table{
+            height: 100%;
+        }
+        .img
+        {
+            background-image: url(./photo.jpg);
+            background-size: cover;
+            margin-top: 20px;
+            width: 96%;
+            height: 100%;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <a href="">Sales Order</a>
+            <a href="">Purchase Invoice</a>
+            <a href="">Vendors</a>
+            <a href="">Stock Category</a>
+            <a href="">Employees</a>
+        </div>
+        <div class="right">
+            <h1 id="mainhead">
+                <div class="one">
+                    <div id="img"></div>
+                    <h3>Manufacturing and Company</h3>
+                </div>
+                <h2>logout</h2>
+            </h1>
+            <div class="info">
+                <div class="box">
+                    <span>TOTAL SALES</span>
+                    <span>6181</span>
+                </div>
+                <div class="box">
+                    <span>TOTAL PROFIT</span>
+                    <span>INR 90K</span>
+                </div>
+                <div class="box">
+                    <span>STOCK QTYS</span>
+                    <span>1153</span>
+                </div>
+                <div class="box">
+                    <span>EMPLOYEES</span>
+                    <span>160</span>
+                </div>
+
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Product</th>
+                        <th>Cost</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2024-06-10</td>
+                        <td>Electronics</td>
+                        <td>Laptop</td>
+                        <td>$1000</td>
+                        <td>2</td>
+                        <td><button>Edit</button><button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2024-06-11</td>
+                        <td>Clothing</td>
+                        <td>T-shirt</td>
+                        <td>$20</td>
+                        <td>5</td>
+                        <td><button>Edit</button><button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>2024-06-12</td>
+                        <td>Food</td>
+                        <td>Apples</td>
+                        <td>$5</td>
+                        <td>10</td>
+                        <td><button>Edit</button><button>Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="tableimg">
+                <table>
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Category</th>
+                        <th>Profit</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Electronics</td>
+                        <td>$5000</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Clothing</td>
+                        <td>$3000</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Food</td>
+                        <td>$2000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <div class="img"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .img {
+            width: 180px;
+            height: 120px;
+            margin-right: 20px;
+
+        }
+
+        .main {
+            height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loginbox {
+            display: inline-block;
+            padding: 10px;
+            width: 600px;
+            height: 305px;
+            border: 10px solid red;
+            text-align: center;
+            position: relative;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        .container :nth-child(1) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn button {
+            width: 100px;
+            height: 50px;
+            padding: 5px;
+            color: white;
+            font-weight: bold;
+            font-size: 25px;
+            margin-right: 10px;
+            background-color: transparent;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+
+        h1,
+        h3 {
+            margin: 0px;
+        }
+
+        .container {
+
+            background-color: rgba(255, 68, 0, 0.849);
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+            align-content: center;
+            text-align: center;
+            color: white;
+
+        }
+
+        .radio {
+            display: flex;
+            margin: 10px;
+            justify-content: space-evenly;
+            font-size: 22px;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 80px;
+        }
+        .input input
+        {
+            width: 90%;
+            height: 22px;
+        }
+        #btn
+        {
+            color: red;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 25px;
+            width: 120px;
+            position: absolute;
+            bottom: 10px;
+            right: 50px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+        .head h1{
+            font-size: 40px;
+        }
+        button:hover
+        {
+            background-color: white;
+            color: black;
+            border-color: black ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <img class="img" src="./img.png" alt="" srcset="">
+            <div class="head">
+                <h1>COLORS</h1>
+                <h1>ACADEMY</h1>
+            </div>
+        </div>
+        <div class="btn">
+            <button>login</button>
+            <button>like</button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="loginbox">
+            <h2>login portal</h2>
+            <div class="radio">
+                <input type="radio" name="" id="">admin
+                <input type="radio" name="" id="">customer
+                <input type="radio" name="" id="">guest
+            </div>
+            <br>
+            <div class="input">
+                <h3>emailid</h3>
+                <input type="email" name="" id="">
+            </div>
+            <br>
+            <div class="input">
+                <h3>password</h3>
+                <input type="password" name="" id="">
+            </div>
+            <button id="btn">LOGIN</button>
+        </div>
+    </div>
+</body>
+
+</html>
