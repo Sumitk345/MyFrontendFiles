@@ -1,0 +1,94 @@
+.section{
+    border:1px solid;
+    margin:10px 20px 10px 20px;
+    padding:20px;
+    background-color: rgb(254, 255, 255);
+}
+
+.item{
+    width:300px;
+    margin:10px;
+    padding:5px;
+    border:1px solid grey;
+    background-color: rgb(255, 243, 245);
+}
+
+/* Reset some default browser styles */
+body, h1, input, button, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the body */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    color: #212529;
+    font-size: 17px;
+}
+
+/* Style the main heading */
+h1 {
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+/* Style for hr */
+hr {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    border: 1px solid #007bff;
+}
+
+/* Style the sections */
+.section {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the inputs */
+input[type="text"] {
+    width: calc(100%);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    font-size: 18px;
+}
+
+/* Style the buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Style the paragraphs */
+p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #495057;
+}
+
+/* Add hover effects to buttons */
+button:hover {
+    background-color: #0056b3;
+}

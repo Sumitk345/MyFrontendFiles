@@ -57,6 +57,7 @@
             width: 170px;
             height: 170px;
             border: 1px solid black;
+            object-fit: cover;
         }
 
         .info {
@@ -70,6 +71,11 @@
             display: flex;
             justify-content: space-around;
             overflow-x: scroll;
+            position: relative;
+        }
+
+        .cardbox::-webkit-scrollbar {
+            display: none;
         }
 
         .card {
@@ -79,6 +85,7 @@
             text-align: justify;
             margin-right: 10px;
             border-radius: 10px;
+            
         }
 
         .first i {
@@ -109,6 +116,80 @@
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
         }
+
+        .next-button {
+            position: fixed;
+            top: 70%;
+            right: 0px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .next-button:hover {
+            background-color: #0056b3;
+        }
+
+        .next-button::after {
+            content: '\203A';
+            font-size: 44px;
+        }
+
+        .prev-button {
+            position: fixed;
+            top: 70%;
+            left: 0px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .prev-button:hover {
+            background-color: #0056b3;
+        }
+
+        .prev-button::before {
+            content: '\2039';
+            font-size: 44px;
+
+        }
+
+        .prev-button.show {
+            display: inline-block;
+            /* Show the element when .show class is added */
+        }
+        .next-button.show {
+            display: inline-block;
+            /* Show the element when .show class is added */
+        }
+        @keyframes rotate {
+            to{
+                transform: rotateY(180deg);
+            }
+        }
+        /*
+        .card:hover{
+            animation: rotate 2s;
+            transform-style: preserve-3d;
+            transition: transform 2s;
+            transform-origin: center;
+        }*/
     </style>
 </head>
 
@@ -124,14 +205,14 @@
             </div>
         </div>
         <div class="imgs">
-            <img src="https://source.unsplash.com/random/900x700/?nature" alt="" srcset="">
-            <img src="https://source.unsplash.com/random/900×700/?Prescription counter" alt="" srcset="">
-            <img src="https://source.unsplash.com/random/900×700/?Medicine shelves" alt="" srcset="">
-            <img src="https://source.unsplash.com/random/900×700/?Pharmacist at work" alt="" srcset="">
-            <img src="https://source.unsplash.com/random/900×700/?Pharmacy signage" alt="" srcset="">
-            <img src="https://source.unsplash.com/random/900×700/?Medicine cabinet" alt="" srcset="">
-            <img src="https://source.unsplash.com/random/900×700/?Pharmacy storefront" alt="" srcset="">
-            <img src="https://source.unsplash.com/random/900×700/?Prescription drugs" alt="" srcset="">
+            <img src="./img12.jpg" alt="" srcset="">
+            <img src="./img13.jpg" alt="" srcset="">
+            <img src="./img14.jpg" alt="" srcset="">
+            <img src="./img15.jpg" alt="" srcset="">
+            <img src="./img16.jpg" alt="" srcset="">
+            <img src="./img17.jpg" alt="" srcset="">
+            <img src="./img19.jpg" alt="" srcset="">
+            <img src="./img18.jpg" alt="" srcset="">
         </div>
         <div class="info">
             <h3>Lorem, ipsum.</h3>
@@ -157,7 +238,7 @@
                     <i class="fa-brands fa-square-facebook"></i>
                     <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
                     <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
-                    <a href="./medicine.html"><img src="https://source.unsplash.com/random/100×100/?Antibiotics " alt=""
+                    <a href="./medicine.html"><img src="./img1.jpg" alt=""
                             srcset=""></a>
 
                 </div>
@@ -174,7 +255,7 @@
                     <i class="fa-brands fa-square-facebook"></i>
                     <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
                     <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
-                    <a href="./medicine.html"><img src="https://source.unsplash.com/random/100×100/?Antidepressants "
+                    <a href="./medicine.html"><img src="./img2.jpg"
                             alt="" srcset=""></a>
                 </div>
                 <div class="second" style="padding: 5px;">
@@ -191,7 +272,7 @@
                     <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
                     <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
                     <a href="./medicine.html"><img
-                            src="https://source.unsplash.com/random/100×100/?Diphenhydramine (Benadryl)" alt=""
+                            src="./img3.jpg" alt=""
                             srcset=""></a>
                 </div>
                 <div class="second" style="padding: 5px;">
@@ -207,7 +288,7 @@
                     <i class="fa-brands fa-square-facebook"></i>
                     <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
                     <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
-                    <a href="./medicine.html"><img src="https://source.unsplash.com/random/100×100/?Antidepressants "
+                    <a href="./medicine.html"><img src="./img4.jpg"
                             alt="" srcset=""></a>
                 </div>
                 <div class="second" style="padding: 5px;">
@@ -223,7 +304,7 @@
                     <i class="fa-brands fa-square-facebook"></i>
                     <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
                     <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
-                    <a href="./medicine.html"><img src="https://source.unsplash.com/random/100×100/?Stimulants" alt=""
+                    <a href="./medicine.html"><img src="./img5.jpg" alt=""
                             srcset=""></a>
                 </div>
                 <div class="second" style="padding: 5px;">
@@ -240,7 +321,7 @@
                     <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
                     <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
                     <a href="./medicine.html"><img
-                            src="https://source.unsplash.com/random/100×100/?Aspirin (Bayer, Bufferin)" alt=""
+                            src="./img6.jpg" alt=""
                             srcset=""></a>
                 </div>
                 <div class="second" style="padding: 5px;">
@@ -257,7 +338,7 @@
                     <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
                     <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
                     <a href="./medicine.html"><img
-                            src="https://source.unsplash.com/random/100×100/?Diphenhydramine (Benadryl)" alt=""
+                            src="./img7.jpg" alt=""
                             srcset=""></a>
                 </div>
                 <div class="second" style="padding: 5px;">
@@ -273,7 +354,7 @@
                     <i class="fa-brands fa-square-facebook"></i>
                     <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
                     <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
-                    <img src="https://source.unsplash.com/random/100×100/?Ibuprofen (Advil, Motrin)" alt="" srcset="">
+                    <img src="./img8.jpg" alt="" srcset="">
                     <a href="./medicine.html"></a>
                 </div>
                 <div class="second" style="padding: 5px;">
@@ -290,7 +371,7 @@
                     <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
                     <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
                     <a href="./medicine.html"><img
-                            src="https://source.unsplash.com/random/100×100/?Acetaminophen (Tylenol)" alt=""
+                            src="./img9.jpg" alt=""
                             srcset=""></a>
                 </div>
                 <div class="second" style="padding: 5px;">
@@ -306,7 +387,7 @@
                     <i class="fa-brands fa-square-facebook"></i>
                     <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
                     <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
-                    <a href="./medicine.html"><img src="https://source.unsplash.com/random/100×100/?Stimulants" alt=""
+                    <a href="./medicine.html"><img src="./img10.jpg" alt=""
                             srcset=""></a>
                 </div>
                 <div class="second" style="padding: 5px;">
@@ -323,7 +404,7 @@
                     <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
                     <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
                     <a href="./medicine.html"><img
-                            src="https://source.unsplash.com/random/100×100/?Aspirin (Bayer, Bufferin)" alt=""
+                            src="./img11.jpg" alt=""
                             srcset=""></a>
                 </div>
                 <div class="second" style="padding: 5px;">
@@ -334,10 +415,45 @@
                 </div>
 
             </div>
-
+            <button class="next-button"></button>
+            <button class="prev-button"></button>
         </div>
 
+
+
     </div>
+    <script>
+        const cardbox = document.querySelector('.cardbox');
+        const prevButton = document.querySelector('.prev-button');
+        const nextButton = document.querySelector('.next-button');
+
+        nextButton.addEventListener('click', function () {
+            cardbox.scrollBy({
+                left: 340, // Adjust scroll distance as needed
+                behavior: 'smooth'
+            });
+        });
+
+        prevButton.addEventListener('click', function () {
+            cardbox.scrollBy({
+                left: -340, // Adjust scroll distance as needed
+                behavior: 'smooth'
+            });
+        });
+
+
+        // Add scroll event listener
+        window.addEventListener('scroll', function () {
+            // Adjust scroll position as needed
+            if (window.scrollY > 100) { // Show element when scrolled beyond 500px
+                prevButton.classList.add('show');
+                nextButton.classList.add('show');
+            } else {
+                prevButton.classList.remove('show');
+                nextButton.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 <script src="https://kit.fontawesome.com/828b92339c.js" crossorigin="anonymous"></script>
 

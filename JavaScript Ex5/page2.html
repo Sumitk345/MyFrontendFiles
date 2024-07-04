@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <title>JavaScript Ex5</title>
+
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <style>
+
+        body
+        {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #output {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            width: 600px;
+            text-align: center;
+            justify-self: center;
+            margin: auto;
+            margin-top: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #output p {
+            max-width: 400px;
+        }
+        #output span {
+            display: inline;
+            width: 150px;
+            font-family: 'Courier New', Courier, monospace;
+            
+        }
+        #output span:first-child {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="coins">
+        <div class="coins-item" data-value="10" onclick="get(this)">
+            <img src="https://placehold.co/150x150/orange/white?text=10"/>
+        </div>
+
+        <div class="coins-item"  data-value="5" onclick="get(this)">
+            <img src="https://placehold.co/150x150/orange/white?text=5" />
+        </div>
+
+        <div class="coins-item" data-value="2" onclick="get(this)">
+            <img src="https://placehold.co/150x150/orange/white?text=2" />
+        </div>
+
+        <div class="coins-item"  data-value="1" onclick="get(this)">
+            <img src="https://placehold.co/150x150/orange/white?text=1" />
+        </div>
+    </div>
+
+    <div class="user" id="output">
+        <input type="text" placeholder="Total amount" id="txt-amount"  />
+    </div>
+
+    <div class="user">
+        <button class="btn">Get Coins</button>
+
+    </div>
+
+    <div class="user" id="output" hidden="hidden">
+        <div>
+            <p>
+                <span>10 Ruppee Coins :</span>
+                <span data-value="10">0</span>
+            </p>
+
+            <p>
+                <span>5 Ruppee Coins :</span>
+                <span data-value="5">0</span>
+            </p>
+            <p>
+                <span>2 Ruppee Coins :</span>
+                <span data-value="2">0</span>
+            </p>
+            <p>
+                <span>1 Ruppee Coins :</span>
+                <span data-value="1">0</span>
+            </p>
+        </div>
+    </div>
+    <script src="./js/script2.js"></script>
+</body>
+
+</html>

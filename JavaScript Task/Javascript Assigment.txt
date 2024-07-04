@@ -1,0 +1,16 @@
+Q1. Ask user to input any character in the textbox and show its ASCII Code on webpage using javascript function 
+
+Q2. Ask user to select gender using radio button either male/female and using textbox input age. check for following conditions and 
+    show output whether employee is eligible for insurance or not ?
+
+     a) employee gender is male and age is between 25 to 65
+     b) employee gender is female and age is between 21 to 61
+
+
+Q3. Ask user to input percentage scored by student in final exam. check if condition using javascript function and show grade of student
+     a) if marks >=75% then distinction
+     b) if marks >=60% then first class
+     c) if marks >=50% then second class
+     d) if marks >=40% then pass
+     e) otherwise "fail"
+

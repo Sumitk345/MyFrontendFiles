@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Character</title>
+    <style>
+        .redline {
+            border-top: 2px solid red;
+            margin-top: 20px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ASCII Character Printer</h1>
+    <form id="asciiForm">
+        <label for="n1">Enter n1:</label>
+        <input type="number" id="n1" name="n1" required>
+        <br><br>
+        <label for="n2">Enter n2:</label>
+        <input type="number" id="n2" name="n2" required>
+        <br><br>
+        <button type="button" onclick="printAscii()">Print</button>
+    </form>
+
+    <div id="output" class="redline"></div>
+
+    <script>
+        function printAscii() {
+            const n1 = parseInt(document.getElementById('n1').value);
+            const n2 = parseInt(document.getElementById('n2').value);
+
+            if (isNaN(n1) || isNaN(n2) || n1 < -128 || n1 > 127 || n2 < -128 || n2 > 127) {
+                alert('Please enter valid numbers between -128 and 127 for both n1 and n2.');
+                return;
+            }
+
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '';
+
+            for (let i = n1; i <= n2; i++) {
+                const asciiChar = String.fromCharCode(i);
+                outputDiv.innerHTML += `<h3>Value: ${i}, ASCII: ${asciiChar}</h3>`;
+            }
+        }
+    </script>
+</body>
+</html>
