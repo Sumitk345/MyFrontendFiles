@@ -1,7 +1,7 @@
 let a = 0;
 let totalamount = document.getElementById("txt-amount");
 let spanoutput = document.querySelectorAll("#output span")
-let totalParagraph = document.querySelector("#total");
+
 
 function get(target) {
       let value = target.getAttribute('data-value');
@@ -19,11 +19,5 @@ function get(target) {
 
             }
       });
-
-      let totalCount = parseInt(totalParagraph.textContent) || 0;
-      totalCount += coinvalue;
-      totalParagraph.textContent = totalCount;
-
-
 
 }
