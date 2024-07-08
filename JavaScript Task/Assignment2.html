@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            body {
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                  background-color: #f0f8ff;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  height: 100vh;
+                  margin: 0;
+            }
+
+            input {
+                  padding: 10px;
+                  margin: 10px 0;
+                  font-size: 16px;
+                  border: 2px solid #007bff;
+                  border-radius: 5px;
+                  width: 250px;
+            }
+
+            button {
+                  padding: 10px 20px;
+                  font-size: 16px;
+                  color: white;
+                  background-color: #007bff;
+                  border: none;
+                  border-radius: 5px;
+                  transition: background-color 0.3s, transform 0.3s;
+            }
+
+            button:hover {
+                  background-color: #0056b3;
+                  transform: scale(1.05);
+            }
+
+            button:disabled {
+                  background-color: #d3d3d3;
+                  cursor: not-allowed;
+            }
+
+            .output-container {
+                  margin-top: 20px;
+                  background-color: #ffffff;
+                  padding: 20px;
+                  border: 2px solid #007bff;
+                  border-radius: 10px;
+                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .output-container div {
+                  margin-bottom: 10px;
+                  font-size: 18px;
+            }
+
+            .output-container span {
+                  font-weight: bold;
+                  color: #007bff;
+            }
+      </style>
+</head>
+
+<body>
+      <input id="input" type="text" oninput="checkInput()">
+      <button class="btn" onclick="save()" disabled>Add Value</button>
+      <div class="output-container">
+            <div>Total array values : <span class="total">0</span></div>
+            <div>Array values : <span id="arrval"></span></div>
+            <div>String Array values : <span id="strarrval"></span></div>
+            <div>Number Array values : <span id="Numarrval"></span></div>
+      </div>
+      <script>
+            var output = document.getElementsByClassName("total")[0];
+            var arrval = document.getElementById("arrval");
+            var strarrval = document.getElementById("strarrval");
+            var Numarrval = document.getElementById("Numarrval");
+            const strarr = [];
+            const numarr = [];
+
+            function checkInput() {
+                  var inputval = document.getElementById("input").value;
+                  var button = document.querySelector('.btn');
+                  button.disabled = inputval.trim() === '';
+            }
+
+            function save() {
+                  var inputval = document.getElementById("input").value;
+                  if (!isNaN(inputval) && inputval !== '') {
+                        numarr.push(parseFloat(inputval));
+                  }
+                  else {
+                        strarr.push(inputval);
+                  }
+                  const mixarr = numarr.concat(strarr);
+
+                  output.innerHTML = mixarr.length;
+                  arrval.innerHTML = mixarr.join(', ');
+                  strarrval.innerHTML = strarr.join(', ');
+                  Numarrval.innerHTML = numarr.join(', ');
+
+                  document.getElementById("input").value = '';
+                  checkInput();
+            }
+      </script>
+</body>
+
+</html>

@@ -154,7 +154,7 @@ i {
 
 #span {
       text-decoration: line-through;
-      
+
 }
 
 #hr {
@@ -212,16 +212,46 @@ hr {
       transform-style: preserve-3d;
 }
 
-#medname
-{
+#medname {
       height: 20px;
       width: 100%;
       margin: 1px;
-      overflow: auto;
+      /* overflow: auto; */
 }
 
-#medname::-webkit-scrollbar
-{
+#medname::-webkit-scrollbar {
       display: none;
       scroll-behavior: smooth;
+}
+
+.scroll-container {
+      width: 100%;
+      overflow: hidden;
+}
+
+.scroll-content {
+      display: inline-block;
+      white-space: nowrap;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+}
+
+.scroll-content:hover {
+      animation: scrollText 8s linear infinite;
+}
+
+.Noscroll
+{
+      /* background-color: antiquewhite; */
+}
+
+@keyframes scrollText {
+      from {
+            transform: translateX(0);
+      }
+
+      to {
+            transform: translateX(-100%);
+      }
 }

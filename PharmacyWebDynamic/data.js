@@ -1,5 +1,3 @@
-var parent = document.getElementsByClassName("right")[0];
-
 var medList = [
     {
         "Id": "1",
@@ -123,58 +121,114 @@ var medList = [
     }
 ]
 
+//Main Logic 1
+// for (let index = 0; index < medList.length; index++) {
+//       var div = document.createElement("div");
+//       div.className = "flip-box";
 
+//       div.innerHTML = ` 
+//         <div class="flip-box-inner">
+//             <div class="card">
+//                 <img src="./img/img${index+1}.jpg" alt="" srcset="">
+//                 <p id="medname">${medList[index].Name}</p>
+//                 <hr id="hr">
+//                 <p>
+//                     <span id="span">$${medList[index].price}</span>
+//                     <span> |</span>
+//                     <span style="color: green;"> ${medList[index].mrp}</span>
+//                 </p>
+//                 <hr>
+//                 <hr>
+//                 <span style="margin-left: 20px;">Qtys</span>
+//                 <input class="input" type="number" name="" id="">
+//                 <a href="">Add to cart</a>
+//             </div>
+//             <div class="cardback">
+//                 <h2>INFO</h2>
+//                 <i class="fa-brands fa-square-facebook"></i>
+//                 <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+//                 <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+//             </div>
+//         </div>
+// `;
 
-//Main Logic
-for (let index = 0; index < medList.length; index++) {
-      var div = document.createElement("div");
-      div.className = "flip-box";
+//       parent.appendChild(div);
 
-      div.innerHTML = ` 
-        <div class="flip-box-inner">
-            <div class="card">
-                <img src="./img/img${index+1}.jpg" alt="" srcset="">
-                <p id="medname">${medList[index].Name}</p>
-                <hr id="hr">
-                <p>
-                    <span id="span">$${medList[index].price}</span>
-                    <span> |</span>
-                    <span style="color: green;"> ${medList[index].mrp}</span>
-                </p>
-                <hr>
-                <hr>
-                <span style="margin-left: 20px;">Qtys</span>
-                <input class="input" type="number" name="" id="">
-                <a href="">Add to cart</a>
+// }
+
+// console.log(medList[0].Name)
+
+//Main logic 2
+var parent = document.getElementsByClassName("right")[0];
+let medicines = null;
+
+fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        medicines = data;
+        console.log(medicines);
+        adddatatoHtml();
+    });
+
+let index = 1;
+
+function adddatatoHtml() {
+    medicines.forEach(med => {
+        var div = document.createElement("div");
+        div.className = "flip-box";
+        div.innerHTML = ` 
+            <div class="flip-box-inner">
+                <div class="card">
+                    <img src="./img/img${index}.jpg" alt="" srcset="">
+                    <div class="scroll-container id="text-container-${index}">
+                        <div class="scroll-content" id="text-content-${index}">
+                            ${med.Name}
+                        </div>
+                    </div>
+                    <hr id="hr">
+                    <p>
+                        <span id="span">$${med.price}</span>
+                        <span> |</span>
+                        <span style="color: green;"> ${med.mrp}</span>
+                    </p>
+                    <hr>
+                    <hr>
+                    <span style="margin-left: 20px;">Qtys</span>
+                    <input class="input" type="number" name="" id="">
+                    <a href="">Add to cart</a>
+                </div>
+                <div class="cardback">
+                    <h2>INFO</h2>
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
+                    <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
+                </div>
             </div>
-            <div class="cardback">
-                <h2>INFO</h2>
-                <i class="fa-brands fa-square-facebook"></i>
-                <i style="margin-left: 30px;" class="fa-brands fa-square-instagram"></i>
-                <i style="margin-left: 55px;" class="fa-brands fa-youtube"></i>
-            </div>
-        </div>
-`;
+        `;
 
-      parent.appendChild(div);
+        parent.appendChild(div);
 
+        // Adding event listeners after element creation
+        // const textContainer = document.getElementById(`text-container-${index}`);
+        // const textContent = document.getElementById(`text-content-${index}`);
+
+        // textContainer.addEventListener('mouseenter', () => {
+        //     textContent.style.animationPlayState = 'running';
+        // });
+
+        // textContainer.addEventListener('mouseleave', () => {
+        //     textContent.style.animationPlayState = 'paused';
+        // });
+
+        // if (textContent.scrollWidth > textContent.clientWidth) {
+        //     textContent.classList.add("scroll-content");
+        //     textContainer.classList.add("scroll-container");
+        //     console.log("yes");
+        // } else {
+        //     textContent.classList.add("Noscroll");
+        // }
+
+        index++;
+    });
 }
 
-console.log(medList[0].Name)
-
-
-//Ignore this code just for testing 
-//Following Code Includes Error
-
-
-// for (let index = 0; index < 20; index++) {
-//     var x = medList[index];
-//     console.log(x.Name)
-//     for (const [key, value] of Object.entries(x)) {
-//         if (x.Id!=0) {
-//             // console.log(`${key}: ${value}`);
-//             console.log(x.Name)
-//         }       
-//       }
-    
-// }
