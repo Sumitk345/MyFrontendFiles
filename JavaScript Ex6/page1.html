@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>JavaScript Ex6</title>
+    </head>
+
+    <body>
+        <h1>HTML data-</h1>
+        <hr>
+
+
+        <input type="color" id="txt-color" />
+
+        <select id="selected-country" onclick="selectCountry(this)">
+            <option value="-1">Select Country</option>
+            <option value="indian">indian</option>
+            <option value="europian">europian</option>
+            <option value="korian">korian</option>
+        </select>
+
+        <button onclick="applyColor()">Apply</button>
+
+        <!-- for perticular li element = getAttribute -->
+        <ul>
+            <li data-artist="indian" data-rating="5">Ludovico Einaudi</li>
+            <li data-artist="indian" data-rating="3.2">Hans Zimmer</li>
+            <li data-artist="indian" data-rating="4.1">Coldplay</li>
+            <li data-artist="indian" data-rating="5">The Beatles</li>
+            <li data-artist="indian" data-rating="3.2">Bon Iver</li>
+            <li data-artist="indian" data-rating="5">Lorde</li>
+            <li data-artist="europian" data-rating="5">Ed Sheeran</li>
+            <li data-artist="europian" data-rating="4.1">Imagine Dragons</li>
+            <li data-artist="korian" data-rating="3.2">Billie Eilish</li>
+            <li data-artist="korian" data-rating="5">Adele</li>
+            <li data-artist="europian" data-rating="5">Queen</li>
+            <li data-artist="korian" data-rating="5">Daft Punk</li>
+            <li data-artist="korian" data-rating="4.1">Florence + The Machine</li>
+            <li data-artist="korian" data-rating="3.2">Michael Jackson</li>
+            <li data-artist="indian" data-rating="5">Enya</li>
+            <li data-artist="indian" data-rating="4.1">Sigur Rós</li>
+            <li data-artist="indian" data-rating="4.1">Fleetwood Mac</li>
+            <li data-artist="indian" data-rating="4.1">Nina Simone</li>
+            <li data-artist="europian" data-rating="5">Mumford & Sons</li>
+            <li data-artist="europian" data-rating="5">Red Hot Chili Peppers</li>
+        </ul>
+
+        <script>
+            var country = "";
+            function selectCountry(target)
+            {
+                country = target.value;
+            }
+
+            function applyColor()
+            {
+                var c = document.getElementById("txt-color").value;
+
+                var all_li = document.getElementsByTagName("li");
+                for(var i=0;i<all_li.length;i++)
+                {
+                   if(all_li[i].getAttribute("data-artist")==country)
+                        all_li[i].style="color:"+c;
+                }                
+            }
+        </script>
+    </body>
+</html>

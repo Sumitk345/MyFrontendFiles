@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500&display=swap" rel="stylesheet">
+      <style>
+            body {
+                  font-family: "Saira Condensed", sans-serif;
+                  font-weight: 500;
+                  font-size: 17px;
+                  font-style: normal;
+                  background-color: #f4f4f9;
+                  margin: 0;
+                  padding: 0;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 100vh;
+            }
+
+            div {
+                  background: white;
+                  padding: 20px;
+                  border-radius: 8px;
+                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                  text-align: center;
+            }
+
+            button {
+                  background-color: #007bff;
+                  color: white;
+                  border: none;
+                  border-radius: 5px;
+                  padding: 10px 20px;
+                  cursor: pointer;
+                  transition: background-color 0.3s ease;
+                  font-size: 17px;
+                  margin-bottom: 20px;
+            }
+
+            button:hover {
+                  background-color: #0056b3;
+            }
+
+            #btn {
+                  margin-left: 10px;
+                  width: 150px;
+                  height: 40px;
+                  margin-top: 20px;
+                  font-size: 15px;
+            }
+
+            h3 {
+                  display: inline-block;
+                  margin-left: 30px;
+                  font-weight: normal;
+                  color: #333;
+            }
+
+            hr {
+                  border: 0;
+                  height: 1px;
+                  background: #e0e0e0;
+                  margin: 20px 0;
+            }
+      </style>
+</head>
+
+<body>
+      <div>
+            <h2 id="findDuplicates">Find Duplicates</h2>
+            <div>
+                  <br>
+                  <hr>
+                  <br>
+                  Array values in Script<h3 id="values" style="display: inline-block;margin-left: 30px;"></h3> <button
+                        id="btn">Add</button> <br>
+                  Total Array values are<h3 id="valueslength" style="display: inline-block;margin-left: 30px;"></h3>
+                  <br>
+                  Repeated Array values are<h3 id="repeated" style="display: inline-block;margin-left: 30px;"></h3>
+            </div>
+      </div>
+      <script>
+            var arr = [20, 60, 50, 80, 10, 20, 60, 40, 20, 50];
+
+            
+
+            var values = document.getElementById("values");
+            var valueslength = document.getElementById("valueslength");
+            var repeatedvalues = document.getElementById("repeated");
+            var btn = document.getElementById("btn");
+            var findDuplicatesBtn = document.getElementById("findDuplicates");
+
+
+            btn.addEventListener("click", () => {
+                  var newvalue = parseInt(prompt("Enter new Value"));
+                  if (!isNaN(newvalue)) {
+                        arr.push(newvalue);
+                        updateValues();
+                  }
+                  updateValues();
+            })
+
+            console.log(arr)
+
+            function updateValues() {
+                  var newarr = [];
+                  for (var i = 0; i < arr.length; i++) {
+                        for (var j = i + 1; j < arr.length; j++) {
+                              if (arr[i] == arr[j]) {
+                                    newarr.push(arr[i])
+                              }
+                        }
+                  }
+                  var result = Array.from(new Set(newarr));
+
+                  console.log(result)
+
+
+                  values.innerText = arr.toString().replaceAll(",", " ")
+                  valueslength.innerText = arr.length
+                  repeatedvalues.innerText = result.toString().replaceAll(",", " ")
+            }
+
+            findDuplicatesBtn.addEventListener("click", updateValues);
+
+            updateValues()
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>JavaScript Ex7</title>
+
+        <style>
+            .section{
+                border:1px solid black;
+                margin:20px;
+                padding:20px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="section">
+            <button onclick="showCount()">Show Array Length</button>
+        </div>
+
+        <div class="section">
+            <button onclick="addValueAtTheEnd()">Add New Value</button>
+        </div>
+
+        <div class="section">
+            <button onclick="removeLastValue()">Remove Last Value</button>
+            <button onclick="removeFirstValue()">Remove First Value</button>
+            <button onclick="removeArrayValues()">Remove Array values</button>
+        </div>
+        
+        
+        <script>
+            var numbers = [];
+
+            //1. length
+            function showCount()
+            {
+                alert("Total count of array values = " + numbers.length);
+            }
+
+            //2. push()
+            function addValueAtTheEnd()
+            {
+                var v = prompt("Enter number :")
+                numbers.push(Number(v));
+
+                alert("Array = " + numbers);
+            }
+
+            //3. pop()
+            function removeLastValue()
+            {
+                numbers.pop();
+                alert("Array = " + numbers);
+            }
+
+            //4. shift()
+            function removeFirstValue()
+            {
+                numbers.shift();
+                alert("Array = " + numbers);
+            }
+
+            //5. unshift()
+            //6. splice()
+            function removeArrayValues()
+            {
+                var position = Number(prompt("Enter position to delete value :"))
+                var n = Number(prompt("Enter how many values to delete from the position :"))
+
+                numbers.splice(position, n);
+                alert("Array = " + numbers);
+            }
+            //7. slice()
+            //8. indexOf()
+            //9. sort()
+            //10. reverse()
+            
+        </script>
+    </body>
+</html>

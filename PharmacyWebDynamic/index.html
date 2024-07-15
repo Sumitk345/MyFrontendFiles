@@ -96,12 +96,13 @@
             margin-top: 10px;
             font-size: 20px;
             color: white;
-
+            transition: transform 0.5s, font-size 0.5s;
         }
-
+        
         .first i:hover {
-            font-size: 35px;
+            transform: scale(2);
         }
+        
 
         .first {
             position: relative;
@@ -429,23 +430,23 @@
 
         nextButton.addEventListener('click', function () {
             cardbox.scrollBy({
-                left: 340, // Adjust scroll distance as needed
+                left: 340, 
                 behavior: 'smooth'
             });
         });
 
         prevButton.addEventListener('click', function () {
             cardbox.scrollBy({
-                left: -340, // Adjust scroll distance as needed
+                left: -340, 
                 behavior: 'smooth'
             });
         });
 
 
-        // Add scroll event listener
+        
         window.addEventListener('scroll', function () {
-            // Adjust scroll position as needed
-            if (window.scrollY > 100) { // Show element when scrolled beyond 500px
+            
+            if (window.scrollY > 100) {
                 prevButton.classList.add('show');
                 nextButton.classList.add('show');
             } else {

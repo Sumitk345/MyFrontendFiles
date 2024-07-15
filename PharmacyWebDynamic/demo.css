@@ -43,12 +43,13 @@ body::-webkit-scrollbar {
 }
 
 .mainbody {
-      padding: 10px;
       display: grid;
       grid-template-columns: 2fr 6fr;
 }
 
 .left {
+      overflow-x: hidden;
+      overflow-y: auto;
       padding: 5px;
       height: 88vh;
       display: grid;
@@ -57,28 +58,36 @@ body::-webkit-scrollbar {
 
 }
 
+.left::-webkit-scrollbar
+{
+      display: none;
+}
+
 .right {
+      margin-top: 5px;
       display: grid;
       overflow: auto;
       grid-template-columns: repeat(4, auto);
       grid-row-gap: 10px;
-      column-gap: 20px;
+      column-gap: 10px;
       padding: 5px;
+      padding-top: 0px;
       height: 88vh;
-      justify-content: space-between;
+      justify-content:flex-start;
 }
 
 .one,
 .two,
 .three {
-      padding: 10px;
+      margin: px;
+      padding: 5px;
       border: 2px solid black;
 }
 
 .radiobtn {
       margin-left: 20px;
-      font-size: 20px;
-      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 i {
@@ -101,7 +110,7 @@ i {
 
 .card {
       height: 400px;
-      width: 250px;
+      width: 275px;
       border: 2px solid black;
       border-radius: 20px;
       text-align: center;
@@ -110,29 +119,6 @@ i {
 
 }
 
-.cardback {
-      height: 350px;
-      width: 250px;
-      border: 2px solid rgb(255, 5, 5);
-      border-radius: 20px;
-      text-align: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-
-}
-
-.cardback i {
-      color: white;
-      font-size: 20px;
-}
 
 .card img {
       height: 60%;
@@ -158,8 +144,8 @@ i {
 }
 
 #hr {
-      width: 60%;
-      padding: 2px;
+      width: 80%;
+      padding: 1px;
       background-color: red;
 }
 
@@ -237,13 +223,20 @@ hr {
       line-height: 20px;
 }
 
-.scroll-content:hover {
+.scroll {
+      display: inline-block;
+      white-space: nowrap;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+}
+
+.scroll:hover {
       animation: scrollText 8s linear infinite;
 }
 
-.Noscroll
-{
-      /* background-color: antiquewhite; */
+.Noscroll {
+      color: white;
 }
 
 @keyframes scrollText {

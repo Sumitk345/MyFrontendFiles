@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>JavaScript Ex6</title>
+    </head>
+
+    <body>
+        <h1>JavaScript Example 6</h1>
+        <hr>
+
+        <ul>
+            <li data-duration="3 Months" data-description="It is interpreted programming">Python</li>
+            <li data-duration="1 Months" data-description="It is procedural programming">C Programming</li>
+            <li data-duration="1 Months" data-description="It is OOP">C++ Programming</li>
+            <li data-duration="6 Months" data-description="It is Mobile App Development Programming">Swift Programming</li>
+            <li data-duration="6 Months" data-description="It is Cross Platform Programming">Java Programming</li>
+        </ul>
+
+
+        <label for="search">Enter value</label>
+        <input id="search" type="text">
+        <button onclick="show()">Search</button>
+
+        <script>
+            function show()
+            {
+                var all_li = document.getElementsByTagName("li");
+                var X = document.getElementById("search");
+                for(var i=0;i<all_li.length;i++)
+                {
+                    var d = all_li[i].getAttribute("data-description");
+                    console.log(d);
+                    if(d.includes(X.value))
+                    {
+                        all_li[i].style = "color:red";
+                    }
+                    else
+                    {
+                        all_li[i].style = "color:black";
+                    }
+                }
+            }
+
+            for (const [key, value] of Object.entries(object1)) {
+                console.log(`${key}: ${value}`);
+              }
+        </script>
+    </body>
+</html>

@@ -6,16 +6,19 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    animation: shownext 0.4s ease-in;
+    scroll-behavior: smooth;
+
 }
-body::-webkit-scrollbar
-{
+
+body::-webkit-scrollbar {
     display: none;
 }
 
-.left::-webkit-scrollbar
-{
+.left::-webkit-scrollbar {
     display: none;
 }
+
 .container {
     display: flex;
     height: 100vh;
@@ -41,7 +44,7 @@ body::-webkit-scrollbar
     border-radius: 50%;
     object-fit: cover;
     margin-top: 7px;
-    border: 10px solid rgba(54, 54, 54, 0.651);
+    border: 8px solid rgba(54, 54, 54, 0.651);
 }
 
 .left h2 {
@@ -63,7 +66,7 @@ body::-webkit-scrollbar
     padding: 10px;
     border-radius: 50%;
     background-color: rgba(103, 103, 103, 0.372);
-    transition: 0.5s;
+    transition: 0.5s ease;
 }
 
 
@@ -105,19 +108,21 @@ body::-webkit-scrollbar
     margin-right: 16px;
 }
 
-.left .pages li a.active, .left .pages li a.active i {
-    color: rgba(0, 255, 255, 0.872); /* Change this to the desired hover color */
+.left .pages li a.active,
+.left .pages li a.active i {
+    color: rgba(0, 255, 255, 0.872);
     transition: color 0.9s;
 }
 
 .left .pages li a:hover i {
-    color: rgba(0, 255, 255, 0.872); /* Change this to the desired hover color */
+    color: rgba(0, 255, 255, 0.872);
     transition: color 0.9s;
     box-shadow: 0 0 5px aqua;
 }
 
-.left .pages li a:hover{
-    color: rgba(0, 255, 255, 0.872); /* Change this to the desired hover color */
+.left .pages li a:hover {
+    color: rgba(0, 255, 255, 0.872);
+    /* Change this to the desired hover color */
     transition: color 0.9s;
 }
 
@@ -134,14 +139,18 @@ body::-webkit-scrollbar
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-image: url(./img4.png);
+    /* background-image: url(./img4.png); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url(./img4.png);
     background-size: cover;
 }
+
 
 .right #one h1 {
     margin-left: 115px;
     font-size: 64px;
     margin-bottom: 0px;
+    animation: show 1s forwards;
 }
 
 .right #one p {
@@ -150,6 +159,8 @@ body::-webkit-scrollbar
     margin-top: 5px;
     margin-left: 120px;
     font-size: 32px;
+    animation: show 1s forwards;
+
 }
 
 .right #about {
@@ -164,4 +175,26 @@ body::-webkit-scrollbar
     height: 100%;
     background-image: url(./img3.jpg);
     background-size: cover;
+}
+
+@keyframes show {
+    from {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes shownext {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

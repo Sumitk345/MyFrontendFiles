@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            body
+            {
+                  height: 100vh;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+ 
+            }
+            button
+            {
+                  width: 100px;
+                  border-radius: 20px;
+                  padding: 10px;
+                  font-size: 17px;
+                  font-family: 'Courier New', Courier, monospace;
+                  font-weight: bold;
+                  background-color: red;
+                  color: white;
+                  transition: all 1s ease;
+            }
+            .change
+            {
+                  
+                  transform: rotateY(360deg);
+                  background-color: green;
+            }
+      </style>
+</head>
+<body>
+      <button id="btn" class="change" onclick="change()">Click</button>
+      <script>
+            var x = document.getElementById("btn");
+            function change(){
+                  
+                  x.classList.toggle("change")
+            }
+      </script>
+</body>
+</html>

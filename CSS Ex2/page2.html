@@ -7,7 +7,8 @@
     <style>
         body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-evenly;
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
@@ -57,9 +58,36 @@
             border: 1px solid #ccc;
             transform: rotateY(180deg);
         }
+
+        button{
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+            border:  2px solid black;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            font-size: 18px;
+            text-align: center;
+            transition: all 0.5s ease;
+            transform-origin: 50% 50%;
+        }
+
+        button:hover
+        {
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+            transform: translateY(-10px);            
+            
+        }
     </style>
 </head>
 <body>
+    <div>
+        <button type="button">Home</button>
+    <button type="button">Contact</button>
+    <button type="button">Service</button>
+    </div>
     <div class="card-container">
         <div class="card">
             <div class="front">
@@ -70,5 +98,6 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>

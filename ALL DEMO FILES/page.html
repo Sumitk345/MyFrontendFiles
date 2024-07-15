@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 500px;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .container p {
+            border: 2px solid black;
+            padding: 20px;
+
+        }
+
+        h1,span
+        {
+            margin: 0px;
+            margin-left: 280px;
+
+        }
+        .container p:nth-child(3) {
+            color: red;
+            padding: 20px;
+            display: inline-block;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>Click here</h1>
+            <span style='font-size:90px;'>&#8595;</span>
+        </div>
+        <div class="container">
+            <p>1</p>
+            <p>2</p>
+            <p style="font-size: 20px;">3</p>
+            <p>4</p>
+        </div>
+    </div>
+    <script>
+        var n = document.getElementsByTagName("p");
+        var m = document.querySelector(".container p:nth-child(3)")
+        var fontsizen = parseInt(n[2].style.fontSize)
+        var fontsizem = parseInt(m.style.fontSize)
+        console.log(fontsizem)
+        m.addEventListener("click", function () {
+            let x = parseInt(m.textContent);
+            m.textContent = x + 1;
+        })
+
+    </script>
+</body>
+
+</html>

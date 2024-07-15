@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <h1>
+            Demo Solving Codes
+      </h1>
+      <script>
+            let arr = [0, 1];
+            for (let i = 0; i < 6; i++) {
+                  let x = parseInt(arr[arr.length - 1] + arr[arr.length - 2]);
+                  arr.splice(arr.length, 0, x);
+            }
+            <!-- console.log(arr) -->
+
+            const person1 = {
+                  firstName: "John",
+                  lastName: "Doe",
+                  age: 50,
+                  eyeColor: "blue"
+                };
+            
+                person1.firstName = "Harry"
+                console.log(person1.firstName+person1.lastName)
+                console.log(person1)
+                person1["hobbies"] =["Sports","cycling"];
+                console.log(person1)
+                console.log(person1.hobbies)
+                console.log(person1.hobbies[0])
+                delete person1.age
+                console.log(person1)
+
+                person1["programs"] = 
+                [
+                {
+                  id:1,
+                  programName:"Addition of numbers"
+                },
+                {
+                  id:2,
+                  programName:"Substraction of numbers"
+                }]
+
+                console.log(person1.programs[0].id);
+                console.log(person1.programs[0].programName);
+                console.log(person1.programs)
+
+                console.log(person1.programs[1].programName);
+                person1.programs[1].programName = "Multiplication of numbers";
+
+                console.log(person1.programs)
+
+                delete person1.programs[0].programName
+                console.log(person1)
+      </script>
+</body>
+
+</html>
