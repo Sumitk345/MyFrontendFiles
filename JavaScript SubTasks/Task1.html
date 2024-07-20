@@ -42,7 +42,6 @@
                   yellow: "#90FF2",
                   pink: "#77FF22"
             }
-            console.log(data["gadgets"][1].products.length)
 
             //1. Write a function to add one more color and color - code in given array then
             //return updated colors’s array from function
@@ -50,10 +49,14 @@
                   colors[colorname] = colorcode
             }
             addnewColor("white", "#55ff2")
+            console.log("Q1")
+
             console.log(colors)
 
             //2. Write a function to count number of products for each gadget and return from
             //function
+
+            console.log("Q2")
 
             for (var i = 0; i < data["gadgets"].length; i++) {
                   console.log(data["gadgets"][i].category + " " + data["gadgets"][i].products.length)
@@ -61,6 +64,8 @@
 
             //3. Write a function to take any gadget name as argument and check that exist in
             //      array or not.Return "true" if exist otherwise return "false"
+            console.log("Q3")
+
             var gad;
             var gadfound = false;
             function searchgadget(gad) {
@@ -74,9 +79,12 @@
 
                   }
             }
+            console.log(searchgadget("hp")+" gadget found")
 
             //4. Write a function to take any gadget name as argument and delete from array. 
             //show updated array record return from function
+
+            console.log("Q4")
 
             function deletegadget(gad) {
                   for (var i = 0; i < data["gadgets"].length; i++) {
@@ -98,6 +106,8 @@
             //Q5. Write a function to prepare array containing product names of each gadget 
             //along with its configuration order by product names in each category
 
+            console.log("Q5")
+
             var newarr = {}
             function creategadget() {
                   for (var i = 0; i < data["gadgets"].length; i++) {
@@ -111,7 +121,7 @@
             creategadget()
             var ordered = Object.keys(newarr).sort()
             console.log(newarr)
-            console.log(ordered)
+            //console.log(ordered)
             var newupdatedarr = []
             for (var i = 0; i < Object.keys(newarr).length; i++)
             {
@@ -129,11 +139,21 @@
             //{‘index’:2, ‘certification’: ‘GOOGLE Cloud Developer’}
             //]
 
+            for (var i = 0; i < certifications.length; i++)
+            {
+                  certifications[i] = {index:i,certification:certifications[i]};
+            }
+
+            console.log("Q6")
+            console.log(certifications)
+
 
             var smartwatch = "none";
             var smartwatchindex = 0;
 
             //Q7. Write a function to print which smartwatch has maximum number of apps
+            console.log("Q7")
+
             for (var i = 0; i < data["gadgets"][1].products.length; i++)
             {
                   //console.log(data["gadgets"][1].products.length)
@@ -155,11 +175,12 @@
 
 
             //Q8. Write a function to print which camera has maximum storage space.
+            console.log("Q8")
 
             var camera = "none";
             var cameraindex = 0;
 
-            //Q7. Write a function to print which smartwatch has maximum number of apps
+            
             for (var i = 0; i < data["gadgets"][2].products.length; i++)
             {
                   //console.log(data["gadgets"][2].products[1].configuration.substring(27,30))
@@ -179,6 +200,64 @@
 
 
             //Q9. Write a function to print which Laptop has less Storage Capacity.
+
+            console.log("Q9")
+
+            var Laptop = data["gadgets"][0].products[0].company ;
+            var Laptopaindex = 0 ;
+
+            if(data["gadgets"][0].products[0].configuration.split("/")[0].includes("TB"))
+                  {
+                        //console.log(data["gadgets"][0].products[i].configuration.split("/")[0].split("TB")[0])
+                        Laptopaindex = parseInt(data["gadgets"][0].products[0].configuration.split("/")[0].split("TB")[0])*1024
+                        //console.log(Laptopaindex)
+                  }
+                  else
+                  {
+                        //console.log(data["gadgets"][0].products[i].configuration.split("/")[0].split("GB")[0])
+                        Laptopaindex = parseInt(data["gadgets"][0].products[0].configuration.split("/")[0].split("GB")[0]);
+                        //console.log(Laptopaindex)
+
+                  }
+            //console.log(Laptopaindex)
+            
+
+            var compare = 0;
+            for (var i = 1; i < data["gadgets"][0].products.length; i++)
+            {
+                  //console.log(data["gadgets"][0].products[i].configuration.split("/")[0].includes("GB"))
+
+                  //console.log(data["gadgets"][0].products[0].configuration.split("/")[0].split("GB")[0])
+                  if(data["gadgets"][0].products[i].configuration.split("/")[0].includes("TB"))
+                  {
+                        //console.log(data["gadgets"][0].products[i].configuration.split("/")[0].split("TB")[0])
+                        compare = parseInt(data["gadgets"][0].products[i].configuration.split("/")[0].split("TB")[0])*1024
+                        //console.log(compare)
+                  }
+                  else
+                  {
+                        //console.log(data["gadgets"][0].products[i].configuration.split("/")[0].split("GB")[0])
+                        compare = parseInt(data["gadgets"][0].products[i].configuration.split("/")[0].split("GB")[0]);
+                        //console.log(compare)
+
+                  }
+
+                  if( compare < Laptopaindex)
+                  {
+                        Laptopaindex = compare;
+                        //console.log(parseInt(data["gadgets"][1].products[i].configuration.substring(0,2)))
+
+                        Laptop = data["gadgets"][0].products[i].company;
+                        //console.log(data["gadgets"][1].products[1].company)
+
+                  }
+                  
+            }
+            console.log("Laptop with less Storage Capacity :  "+ Laptop)
+
+
+            console.log("Q10")
+
 
       </script>
 </body>
