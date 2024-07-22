@@ -257,7 +257,21 @@
 
 
             console.log("Q10")
+            //Q10. Define a function to filter laptops by name of processor
+            
+            function filterlaptop(processor)
+            {
+                  for (var i = 0; i < data["gadgets"][0].products.length; i++)
+                  {
+                        if(data["gadgets"][0].products[i].configuration.includes(processor))
+                        {
+                              console.log(data["gadgets"][0].products[i].company)
+                        }
+                  }
+            }
 
+            let processor = "I7";
+            filterlaptop(processor);
 
       </script>
 </body>

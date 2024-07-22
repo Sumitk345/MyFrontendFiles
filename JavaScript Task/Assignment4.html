@@ -19,29 +19,50 @@
 
             .card {
                   display: flex;
-                  width: 350px;
+                  width: 300px;
                   margin-top: 10px;
                   overflow: hidden;
+                  margin: 5px;
             }
-            .card h3,
+
+            .card h3{
+                  padding: 5px;
+                  text-align: justify;
+                  margin-top: 5px;
+                  margin-bottom: 5px;
+            }
+            
+
             .card p {
-                  width: 350px;
+                  padding: 5px;
+                  height: 150px;
+                  text-align: justify;
                   margin-top: 5px;
                   margin-bottom: 5px;
             }
 
+            
+            .card img{
+                  
+                  height: 180px;
+            }
             .btn {
+                  right: 3px;
+                  bottom: 3px;
+                  position: absolute;
                   width: 70%;
                   margin: 10px;
                   align-self: flex-end;
             }
-            #cards
-            {
-                  margin: 0px;
-                 margin-top: 10px;
-                 display: flex;
-                 justify-content: space-between;
-                 width: 100%;
+
+            #cards {
+                  margin-top: 10px;
+                  display: flex;
+                  justify-content: space-evenly;
+                  width: 100%;
+                  padding: 0px;
+                  display: none;
+
             }
       </style>
 </head>
@@ -52,7 +73,7 @@
             <option value="-1">Select Country</option>
       </select>
       <button
-            class="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            id="btnshow" class="select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
             type="button">Click to show Courses
       </button>
       <div class="container" id="cards">
@@ -62,13 +83,14 @@
 
       <script>
             var datalist = document.getElementById("datalist");
+            var btnshow = document.getElementById("btnshow");
             var cards = document.getElementById("cards");
             var data = document.querySelectorAll("#datalist .opt");
             var countries = ["India", "America", "Austrellia", "England", "Japan"];
             var course_data = {
                   1: { 'course': 'BootStrap', 'descr': 'Bootstrap. Build responsive, mobile-first projects on the web with the worlds most popular front-end component library.', 'img': 'bootstrap.png' },
 
-                  2: { 'course': 'Java', 'descr': 'Java is Object Oriented programming Language invented in 1991 by James Gosling', 'img': 'java.png' },
+                  2: { 'course': 'Java', 'descr': 'Java is Object Oriented programming Language invented in 1991 by James Gosling with the worlds most popular front-end component library', 'img': 'java.png' },
 
                   3: { 'course': 'Python', 'descr': 'Python is a widely used general-purpose, high level programming language. It was initially designed by Guido in 1991', 'img': 'python.png' },
 
@@ -91,6 +113,8 @@
             }
             <!-- for(var i =0 ; i < ) -->
             console.log(course_data)
+            console.log(course_data[1].course)
+            console.log(course_data[1].descr)
 
 
             for (var item of Object.keys(course_data)) {
@@ -99,14 +123,19 @@
                   card.dataset.index = item;
                   card.className = "card";
                   card.innerHTML = `
-                        <img src="./images1.jpg" alt="" srcset="">
-                        <h3>Lorem, ipsum dolor.</h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae, cumque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, reprehenderit!</p>
-                        <button class="btn btn-primary">Get Course</button>
-                        `
+                  <img src="./images${item}.jpg" alt="" srcset="">
+                  <h3>${course_data[item].course}</h3>
+                  <p>${course_data[item].descr}</p>
+                  <button class="btn btn-primary">Get Course</button>
+                  `;
                   cards.appendChild(card);
                   ;
             }
+
+            btnshow.addEventListener("click",()=>
+            {
+                  cards.style = "display:flex"
+            })
       </script>
       <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
 

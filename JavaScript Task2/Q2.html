@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <h1>Restaurent Bill Spliter</h1>
+      <script>
+            function calculatetheBill(totalBill, person) {
+                  let taxRate = 0.08;
+                  let tipRate;
+              
+                  let Taxbill = totalBill + (totalBill * taxRate);
+              
+                  if (Taxbill < 50)
+                   {
+                      tipRate = 0.15;
+                  } else if (Taxbill <= 100)
+                   {
+                      tipRate = 0.20;
+                  } else {
+                      tipRate = 0.25;
+                  }
+              
+                  
+                  const Tipamount = Taxbill * tipRate;
+                  const finalBill = Taxbill + Tipamount;
+              
+                  
+                  const amountperPerson = finalBill / person;
+              
+                  return amountperPerson;
+              }
+              
+              let totalBill = 85; 
+              let person = 4; 
+              let share = calculatetheBill(totalBill, person);
+              
+              document.write(`Each person should pay: $${share}`);
+              
+      </script>
+</body>
+</html>
