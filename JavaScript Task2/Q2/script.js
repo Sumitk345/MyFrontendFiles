@@ -12,19 +12,21 @@ function calculateBill() {
       let taxRate = 0.08;
       let tipRate;
   
-      let taxBill = totalBill + (totalBill * taxRate);
   
-      if (taxBill < 50) {
+      if (totalBill < 50) {
           tipRate = 0.15;
-      } else if (taxBill <= 100) {
+      } else if (totalBill <= 100) {
           tipRate = 0.20;
       } else {
           tipRate = 0.25;
       }
   
-      const tipAmount = taxBill * tipRate;
-      const finalBill = taxBill + tipAmount;
+      const tipAmount = totalBill * tipRate;
+
+      const tipamountBill = totalBill + tipAmount;
   
+      let finalBill = tipamountBill + (tipamountBill * taxRate);
+
       const amountPerPerson = finalBill / person;
   
       document.getElementById('result').innerText = `Each person should pay: $${amountPerPerson.toFixed(2)}`;

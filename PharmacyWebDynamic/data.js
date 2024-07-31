@@ -1,6 +1,6 @@
 //Main logic
-var parent = document.getElementsByClassName("right")[0];
-var one = document.getElementById("one");
+var parent = document.getElementById("rightalign") ;
+var one = document.querySelector(".one .radiobtn");
 
 var medicines = null;
 
@@ -9,7 +9,7 @@ fetch('data.json')
     .then(data => {
         medicines = data;
         const typeSet = new Set(medicines.map(obj => obj.Type));
-        
+
         const uniqueTypes = Array.from(typeSet);
         console.log(uniqueTypes);
         adddatatoHtml();
@@ -23,7 +23,7 @@ function adddatatoHtml() {
     medicines.forEach(med => {
         var div = document.createElement("div");
         div.className = "flip-box";
-        div.dataset.type = med.Type;
+        div.classList.add(med.Type)
         div.innerHTML = ` 
             <div class="flip-box-inner">
                 <div class="card">
@@ -66,28 +66,25 @@ function adddatatoHtml() {
 
 function addTypetoHtml(uniqueTypes) {
     uniqueTypes.forEach(type => {
-        var div = document.createElement("div");
-        div.className = "radiobtn";
-        div.innerHTML = `
-            <input type="radio" name="category" id="cat1" value=${type}>Category :${type}
-        `
-        one.append(div)
+
+        var input = document.createElement("input");
+        var br = document.createElement("br");
+        input.type = "radio";
+        input.name = "radio";
+        input.dataset.filter = `.${type}`;
+        input.id = `cat_${type}`;  // Unique ID for each category
+        
+        var label = document.createElement("label");
+        label.htmlFor = input.id; // Associate label with input
+        label.innerText = `Category: ${type}`;
+
+        one.appendChild(br);
+        one.appendChild(input);
+        one.appendChild(label);
     }
     )
-    const radioButtons = document.querySelectorAll('input[name="category"]');
-
-        radioButtons.forEach(radio => {
-            radio.addEventListener('change', () => {
-                const filterType = radio.value; 
-                console.log(radio.checked);
-                document.querySelectorAll('.flip-box').forEach(card => {
-                    if (filterType === 'all' || card.dataset.type === filterType) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
 
 }
+
+
+

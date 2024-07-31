@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            .products
+            {
+                  width: 200px;
+                  background-color: aqua;
+                  padding: 20px;
+            }
+            button{
+                  padding: 10px;
+            }
+      </style>
+</head>
+<body>
+      <div class="products">
+            <div class="product">
+                  <img src="" alt="Image" srcset="">
+                  <h1>Product 1</h1>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                  <button>Submit</button>
+            </div>
+      </div>
+      <script>
+            function addto()
+            {
+                  document.querySelector(".products")
+                  .addEventListener("click",function(details)
+                  {
+                        details.target.style.display = "none"
+                        console.log(details.target)
+                  })
+            }
+            addto()
+      </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Zoom</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .main {
+            position: absolute;
+            left: 10%;
+            display: flex;
+            box-shadow: 0 29px 52px rgba(0, 0, 0, 0.40), 0 25px 16px rgba(0, 0, 0, 0.20);
+            width: 30%;
+            padding: 5px;
+            height: 70%;
+            overflow: hidden;
+            background-color: white;
+            transition: all 1s ease;
+        }
+
+        .container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #show {
+            box-shadow: 0 29px 52px rgba(0, 0, 0, 0.40), 0 25px 16px rgba(0, 0, 0, 0.20);
+            position: absolute;
+            right: 25%;
+            padding: 5px;
+            height: 70%;
+            display: var(--display);
+            content: '';
+            width: 30%;
+            background-color: black;
+            background-image: var(--url);
+            background-size: 300%;
+            background-position: var(--zoom-x) var(--zoom-y);
+        }
+
+        #tableContainer {
+            position: absolute;
+            width: 150px;
+            height: 190px;
+            display: block;
+            flex-wrap: wrap;
+            background-color: rgb(106, 207, 247);
+            opacity: 0.2;
+            border: 1px solid rgb(255, 255, 255);
+            pointer-events: none;
+        }
+
+        .cell {
+            border-color: white;
+            background-color: white;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 0.1px solid rgb(94, 92, 92);
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div class="main">
+        <div class="container" id="img">
+            <img src="./All IN ONE IMAGES/img9.webp" alt="">
+        </div>
+        <div id="tableContainer"></div>
+
+    </div>
+    <div id="show" style="--url: url('./All IN ONE IMAGES/img9.webp'); --zoom-x:0% ; --zoom-y:0% ; --display:none">
+    </div>
+    <script>
+        let imageZoom = document.getElementById("img");
+        let showImage = document.getElementById("show");
+        let body = document.getElementById("body");
+        let tableContainer = document.getElementById("tableContainer");
+
+        imageZoom.addEventListener('mousemove', (event) => {
+            tableContainer.style.display = 'flex';
+            showImage.style.setProperty('--display', 'block');
+            let pointer = {
+                x: (event.offsetX * 100) / imageZoom.offsetWidth,
+                y: (event.offsetY * 100) / imageZoom.offsetHeight,
+            }
+            showImage.style.setProperty('--zoom-x', pointer.x + '%');
+            showImage.style.setProperty('--zoom-y', pointer.y + '%');
+        });
+
+        imageZoom.addEventListener('mouseout', (event) => {
+            showImage.style.setProperty('--display', 'none');
+            tableContainer.style.display = 'none';
+
+        });
+
+        body.addEventListener('mousemove', (event) => {
+            let pointer = {
+                x: event.clientX - (tableContainer.clientWidth / 2),
+                y: event.clientY - (tableContainer.clientHeight / 2),
+            };
+            tableContainer.style.left = `${pointer.x-150}px`;
+            tableContainer.style.top = `${pointer.y-90}px`;
+        });
+
+        function createTable() {
+            const rows = 20;
+            const columns = 20;
+            const tableContainer = document.getElementById('tableContainer');
+
+            // Clear any existing table
+            tableContainer.innerHTML = '';
+
+            // Calculate the size of each cell
+            const cellWidth = tableContainer.clientWidth / columns;
+            const cellHeight = tableContainer.clientHeight / rows;
+
+            // Generate rows and columns
+            for (let i = 0; i < rows * columns; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'cell';
+                cell.style.width = `${cellWidth}px`;
+                cell.style.height = `${cellHeight}px`;
+                cell.textContent = ``;
+                tableContainer.appendChild(cell);
+            }
+        }
+
+        createTable();
+    </script>
+</body>
+
+</html>

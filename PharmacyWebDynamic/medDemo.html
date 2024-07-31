@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./demo.css">
-    <title>Document</title>
-    
+    <title>Stanley's Pharmacy</title>
+
+    <script src="https://kit.fontawesome.com/828b92339c.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="main-head">
         <a href="./index.html">
-            <h1 style="margin-left:10px ;">Stanley's Pharmacy</h1>
+            <h1 style="margin-left:10px;">Stanley's Pharmacy</h1>
         </a>
         <div class="mainbtn">
             <a href="./signup.html"><button>Sign Up</button></a>
@@ -24,31 +25,12 @@
         <div class="left">
             <div class="one" id="one">
                 <h3>Category</h3>
-
+                <div class="radiobtn">
+                    <input type="radio" name="radio" data-filter="*">All
+                </div>
             </div>
             <div class="two">
                 <h3>Sub Category</h3>
-                <div class="radiobtn">
-                    <input type="radio" name="category" id="cat2">Sub Category : 1
-                </div>
-                <div class="radiobtn">
-                    <input type="radio" name="category" id="cat2">Sub Category : 2
-                </div>
-                <div class="radiobtn">
-                    <input type="radio" name="category" id="cat2">Sub Category : 3
-                </div>
-                <div class="radiobtn">
-                    <input type="radio" name="category" id="cat2">Sub Category : 4
-                </div>
-                <div class="radiobtn">
-                    <input type="radio" name="category" id="cat2">Sub Category : 5
-                </div>
-                <div class="radiobtn">
-                    <input type="radio" name="category" id="cat2">Sub Category : 4
-                </div>
-                <div class="radiobtn">
-                    <input type="radio" name="category" id="cat2">Sub Category : 5
-                </div>
             </div>
             <div class="three">
                 <div class="search">
@@ -64,11 +46,32 @@
             </div>
         </div>
         <div class="right">
-            
+            <div id="rightalign">
+
+            </div>
+
         </div>
     </div>
 
+    <script src="./data.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script>
+
+        // init Isotope
+        var $grid = $('.right').isotope({
+            itemSelector: ".flip-box",
+            layoutMode: "fitRows",
+        });
+
+        // filter items on button click
+        $('.one .radiobtn input').on('click', function () {
+            console.log(this)
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+        });
+    </script>
+
 </body>
-<script src="https://kit.fontawesome.com/828b92339c.js" crossorigin="anonymous"></script>
-<script src="./data.js"></script>
+
 </html>

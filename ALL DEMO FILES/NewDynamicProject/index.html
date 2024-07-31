@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothes Sorting</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="controls">
+        <select id="color-sort" onchange="sortItems()">
+            <option value="">Sort by Color</option>
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+            <!-- Add other colors as options -->
+        </select>
+
+        <select id="size-sort" onchange="sortItems()">
+            <option value="">Sort by Size</option>
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+            <!-- Add other sizes as options -->
+        </select>
+
+        <select id="type-sort" onchange="sortItems()">
+            <option value="">Sort by Type</option>
+            <option value="Casual">Casual</option>
+            <option value="Denim">Denim</option>
+            <option value="Formal">Formal</option>
+            <!-- Add other types as options -->
+        </select>
+
+        <select id="sort-by" onchange="sortItems()">
+            <option value="">Sort by Name</option>
+            <option value="name">Name</option>
+        </select>
+    </div>
+
+    <div id="cards-container" class="cards-container">
+        <!-- Cards will be dynamically generated here -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
