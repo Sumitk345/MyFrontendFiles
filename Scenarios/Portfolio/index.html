@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="./css/img1.jpg" alt="" srcset="">
+            <h2>Sumit K</h2>
+            <div class="socialicon">
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-skype"></i>
+                <i class="fa-brands fa-linkedin"></i>
+            </div>
+            <div class="pages">
+                <li><a href="#one" class="active"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
+                <li><a href="#about"><i class="fa-regular fa-user"></i>About</a></li>
+                <li><a href="#resume"><i class="fa-regular fa-file"></i>Resume</a></li>
+                <li><a href="#portfolio"><i class="fa-solid fa-images"></i>Portfolio</a></li>
+                <li><a href="#services"><i class="fa-solid fa-server"></i>Services</a></li>
+                <li><a href="#dropdown"><i class="fa-solid fa-list"></i>Dropdown</a></li>
+                <li><a href="#contact"><i class="fa-regular fa-envelope"></i>Contact</a></li>
+
+
+
+            </div>
+        </div>
+        <div class="right">
+            <section id="one">
+                <h1>Sumit Kolekar</h1>
+                <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer">Designer</span><span
+                        class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span
+                        class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            </section>
+            <section id="about">
+                <div class="about">
+                    <h1 class="newh1">About</h1>
+                    <hr class="newhr">
+                    <br>
+                    <p class="newp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem delectus quam neque
+                        dolores illum
+                        accusamus sit, consequuntur eius, excepturi sint ex consequatur? Officiis architecto nemo quam
+                        libero tenetur dolorem magnam a iste dolores deserunt. Ex ducimus excepturi, temporibus a quis
+                        necessitatibus, voluptate nulla assumenda eveniet nemo aut, voluptates sapiente magnam.</p>
+                    <div id="info">
+                        <img src="./css/img1.jpg" alt="">
+                        <div id="moreinfo">
+                            <h3>Full Stack Web Developer</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius cupiditate nemo tempora
+                                minus minima consequuntur nesciunt velit?</p>
+                            <div class="groupinfo">
+                                <pre><i class="fa-solid fa-chevron-right"></i><strong>Birthday : </strong>  26 Dec 2001</pre>
+                                <pre><i class="fa-solid fa-chevron-right"></i><strong>Age : </strong>  21</pre>
+                                <pre><i class="fa-solid fa-chevron-right"></i><strong>Website: </strong>  www.example.com</pre>
+                                <pre><i class="fa-solid fa-chevron-right"></i><strong>Degree : </strong>  B.Tech</pre>
+                                <pre><i class="fa-solid fa-chevron-right"></i><strong>Phone : </strong>  8462934480</pre>
+                                <pre><i class="fa-solid fa-chevron-right"></i><strong>Email : </strong>  sumitkolekar345@gmail</pre>
+                                <pre><i class="fa-solid fa-chevron-right"></i><strong>City : </strong>  Sangli</pre>
+                                <pre><i class="fa-solid fa-chevron-right"></i><strong>Freelance : </strong>  Available</pre>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ipsa rerum
+                                accusantium similique quibusdam, quod beatae nobis fugit consequatur alias, tempore
+                                dolorum voluptates fugiat ea a nulla incidunt quae laudantium!</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section id="resume">
+                <div class="container">
+                    <div class="row">
+                        <div class="resume-col-1">
+                            <img src="./css/NewImg.jpg" alt="" srcset="">
+                        </div>
+                        <div class="resume-col-2">
+                            <h1 class="sub-title">Resume</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus saepe ducimus
+                                maiores laborum? Atque error consequuntur quae harum vitae eaque quasi necessitatibus
+                                sit, ab quibusdam, similique ea nesciunt tempora sed, itaque provident esse quo corporis
+                                dignissimos neque nemo rem libero.</p>
+                            <div class="tab-titles">
+                                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                                <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                                <p class="tab-links" onclick="opentab('education')">Eductaion</p>
+                            </div>
+                            <div class="tab-contents active-tab" id="skills">
+                                <ul>
+                                    <li><span>UI/UX Design</span><br>Creating user-friendly web interfaces with a focus
+                                        on aesthetics and usability.</li>
+                                    <li><span>Web Development</span><br>Developing responsive and dynamic websites using
+                                        HTML, CSS, and JavaScript.</li>
+                                    <li><span>App Development</span><br>Building robust mobile and web applications with
+                                        modern frameworks and tools.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="experience">
+                                <ul>
+                                    <li><span>Senior UI/UX Designer</span><br>Worked on high-profile projects for
+                                        leading tech companies, enhancing user experience and design.</li>
+                                    <li><span>Full Stack Developer</span><br>Developed end-to-end solutions for web
+                                        applications, handling both frontend and backend tasks.</li>
+                                    <li><span>Mobile App Developer</span><br>Created intuitive and performant mobile
+                                        apps for various platforms, focusing on user engagement.</li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents" id="education">
+                                <ul>
+                                    <li><span>2021 - Present</span><br>Master's in Computer Science, specializing in
+                                        Human-Computer Interaction at XYZ University.</li>
+                                    <li><span>2017 - 2021</span><br>Bachelor's in Information Technology at ABC College,
+                                        with a focus on web and mobile development.</li>
+                                    <li><span>2015 - 2017</span><br>Associate Degree in Graphic Design from DEF
+                                        Institute, emphasizing design principles and tools.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section id="portfolio">
+                <div class="portfolio">
+                    <h1 class="newh1">Portfolio</h1>
+                    <br>
+                    <p class="newp" style="margin:-10px 0 0px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem delectus quam neque
+                        dolores illum
+                        accusamus sit, consequuntur eius, excepturi sint ex consequatur? Officiis architecto nemo quam
+                        necessitatibus, voluptate nulla assumenda eveniet nemo aut, voluptates sapiente magnam.</p>
+
+                    <div class="portfolio cardcontainer">
+                        <div class="isotope-layout" data-default-filter="*" data-layout="masonry"
+                            data-sort="original-order">
+                            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                                <li data-filter="*" class="filter-active glow">All</li>
+                                <li data-filter=".filter-app">App</li>
+                                <li data-filter=".filter-product">Product</li>
+                                <li data-filter=".filter-branding">Branding</li>
+                                <li data-filter=".filter-books">Books</li>
+                            </ul>
+
+                            <div class="work-list" id="work-list">
+                                <div class="work">
+                                    <img src="./css/work1.jpg" alt="" srcset="">
+                                    <div class="layer">
+                                        <h3>Social media App</h3>
+                                        <p>The App connects you to the talented people<br> around the world</p>
+                                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                    </div>
+                                </div><div class="work">
+                                    <img src="./css/work2.jpg" alt="" srcset="">
+                                    <div class="layer">
+                                        <h3>Music  App</h3>
+                                        <p>The App connects you to the talented people<br> around the world</p>
+                                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                    </div>
+                                </div><div class="work">
+                                    <img src="./css/work3.jpg" alt="" srcset="">
+                                    <div class="layer">
+                                        <h3>Online Shopping App</h3>
+                                        <p>The App connects you to the talented people<br> around the world</p>
+                                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+
+                </div>
+            </section>
+            <section id="services">
+                <div class="services">
+                    <h1>My Services</h1>
+                    <div class="services-list">
+                            <div>
+                                <i class="fas fa-paint-brush"></i>
+                                <h2>Web Design</h2>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio inventore alias omnis et repudiandae quis, eveniet ipsum molestiae veniam eligendi.</p>
+                                <a href="#">Learn More</a>
+                            </div>
+                            <div>
+                                <i class="fas fa-code"></i>
+                                <h2>Web Development</h2>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio inventore alias omnis et repudiandae quis, eveniet ipsum molestiae veniam eligendi.</p>
+                                <a href="#">Learn More</a>
+                            </div>
+                            <div>
+                                <i class="fas fa-object-group"></i>
+                                <h2>UI/UX Design</h2>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio inventore alias omnis et repudiandae quis, eveniet ipsum molestiae veniam eligendi.</p>
+                                <a href="#">Learn More</a>
+                            </div>
+                            <div>
+                                <i class="fas fa-chart-line"></i>
+                                <h2>SEO Optimization</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a href="#">Learn More</a>
+                            </div>
+                            <div>
+                                <i class="fas fa-pencil-alt"></i>
+                                <h2>Content Creation</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a href="#">Learn More</a>
+                            </div>
+                            <div>
+                                <i class="fas fa-image"></i>
+                                <h2>Graphic Design</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <a href="#">Learn More</a>
+                            </div>
+                </div>
+            </section>
+
+            <section id="dropdown"></section>
+            <section id="contact">
+                <div class="rn-contact-area rn-section-gap section-separator" id="contacts">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-title text-center">
+                                    <span class="subtitle">Contact</span>
+                                    <h2 class="title">Contact With Me</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt--50 mt_md--40 mt_sm--40 mt-contact-sm">
+                            <div class="col-lg-5">
+                                <div class="contact-about-area">
+                                    <div class="thumbnail">
+                                        <img id="newimg" src="./css/work8.jpg" alt="contact-img">
+                                    </div>
+                                    <div class="title-area">
+                                        <h4 class="title">Akash Kadam</h4>
+                                        <span>UI UX DESIGNER</span>
+                                    </div>
+                                    <div class="description">
+                                        <p>I am available for freelance work. Connect with me via and call in to my account.
+                                        </p>
+                                        <span class="phone">Phone: <a href="#">+923364491155</a></span>
+                                        <span class="mail">Email: <a href="inaamajay007@gmail.com">inaamajay007@gmail.com</a></span>
+                                    </div>
+                                    <div class="social-area">
+                                        <div class="name">FIND WITH ME</div>
+                                        <div class="social-icone">
+                                            <a href="https://web.facebook.com/inaam1992/"><i data-feather="facebook"></i></a>
+                                            <a href="https://www.linkedin.com/in/inam-ur-rehman-366b1120b/"><i data-feather="linkedin"></i></a>
+                                            <a href="https://www.instagram.com/inaamajay/"><i data-feather="instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-aos-delay="600" class="col-lg-7 contact-input">
+                                <div class="contact-form-wrapper">
+                                    <div class="introduce">
+
+                                        <form class="rnt-contact-form rwt-dynamic-form row" id="contact-form" method="POST" action="mail.php">
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="contact-name">Your Name</label>
+                                                    <input class="form-control form-control-lg" name="contact-name" id="contact-name" type="text">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="contact-phone">Phone Number</label>
+                                                    <input class="form-control" name="contact-phone" id="contact-phone" type="text">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label for="contact-email">Email</label>
+                                                    <input class="form-control form-control-sm" id="contact-email" name="contact-email" type="email">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label for="subject">subject</label>
+                                                    <input class="form-control form-control-sm" id="subject" name="subject" type="text">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label for="contact-message">Your Message</label>
+                                                    <textarea name="contact-message" id="contact-message" cols="30" rows="10"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <button name="submit" type="submit" id="submit" class="rn-btn">
+                                                    <span>SEND MESSAGE</span>
+                                                    <i data-feather="arrow-right"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://kit.fontawesome.com/828b92339c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
