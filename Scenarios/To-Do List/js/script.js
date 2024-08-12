@@ -31,7 +31,7 @@ const displayTasks = () => {
                 </label>
                 <span class="taskname ${value}">${key}</span>
                 <button class="edit ${value}"><i class="fa-solid fa-pen-to-square" data-index="${index}"></i></button>
-                <button class="delete" data-index="${index}"><i class="fa-solid fa-trash"></i></button>
+                <button class="delete"><i class="fa-solid fa-trash"data-index="${index}"></i></button>
             `;
             todolist.appendChild(taskItem);
             
@@ -57,8 +57,14 @@ const displayTasks = () => {
     document.querySelectorAll('.delete').forEach(deletebtn => {
         deletebtn.addEventListener('click', (event) => {
             let index = event.target.getAttribute('data-index');
+            console.log(index);
+            
             let storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
-            storedTodos.splice(index, 1)
+            console.log(storedTodos);
+
+            var delitem = storedTodos.splice(index, 1)
+            console.log(delitem);
+
             localStorage.setItem("todos", JSON.stringify(storedTodos));
             updateCount();
             displayTasks();
@@ -68,6 +74,10 @@ const displayTasks = () => {
     document.querySelectorAll('.edit').forEach(editbtn => {
         editbtn.addEventListener('click', (event) => {
             console.log("click");
+            var block = document.querySelector('.task:has(.edit:focus)')
+            // console.log(block);
+            block.classList.add('disable')
+
             Neweditbtn.style.zIndex = 1;
             let index = event.target.getAttribute('data-index');
             let storedTodos = JSON.parse(localStorage.getItem("todos")) || [];

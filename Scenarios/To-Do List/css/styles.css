@@ -16,8 +16,14 @@ body {
 #pending-tasks {
       text-align: start;
       padding-left: 45px;
+      font-size: 17px;
+      font-weight: 600;
 }
 
+.count-value{
+      font-size: 18px;
+      color: #0059ff;
+}
 .app {
       font-family: 'Poppins', sans-serif;
       width: 40%;
@@ -144,6 +150,7 @@ li {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+
 }
 
 .edit,
@@ -151,14 +158,15 @@ li {
       background: none;
       border: none;
       cursor: pointer;
-      padding: 6px;
-      margin-left: 5px;
+      padding: 0px;
+      margin-left: 15px;
+      margin-right: 5px;
       color: #5a95ff;
 }
 
 .edit i,
 .delete i {
-      font-size: 16px;
+      font-size: 17px;
 }
 
 .custom-checkbox {
@@ -202,7 +210,7 @@ li {
 }
 
 
-.true{
+.true {
       text-decoration: line-through;
 }
 
@@ -210,4 +218,15 @@ li {
       cursor: not-allowed;
       opacity: 0.5;
       pointer-events: none;
-  }
+}
+
+/* .task:has(.edit:focus) {
+      background-color: lightblue;
+} */
+
+.disable{
+      cursor: not-allowed;
+      opacity: 0.5;
+      pointer-events: none;
+      background-color: lightblue;
+}

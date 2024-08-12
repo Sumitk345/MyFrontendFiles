@@ -141,7 +141,7 @@ body::-webkit-scrollbar {
     width: 100%;
     height: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-        url(./img4.png);
+        url(/Images/img4.png);
     background-size: cover;
 }
 
@@ -339,12 +339,31 @@ body::-webkit-scrollbar {
     padding: 0px;
 }
 
+@keyframes delay {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .tab-contents ul li {
     width: 50%;
     list-style: none;
     font-stretch: ultra-expanded;
     margin: 50px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    animation: delay 1s forwards;
+
 }
+
+
 
 .tab-contents ul li span {
     color: #b54679;
@@ -394,12 +413,11 @@ body::-webkit-scrollbar {
 }
 
 .work-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr !important;
-    grid-column-gap: 20px !important;
-    grid-row-gap: 20px !important;
+    display: flex;
+    width: 100%;
     height: 470px !important;
     overflow: scroll !important;
+    flex-wrap: wrap;
 
 }
 
@@ -408,11 +426,14 @@ body::-webkit-scrollbar {
 }
 
 .work-list .work {
-    border-radius: 15px;
-    min-width: 310px;
-    height: 250px;
-    overflow: hidden;
     position: relative;
+    margin: 4px;
+    width: calc(33.33% - 10px);
+    overflow: hidden;
+    cursor: pointer;
+    height: 250px;
+    border-radius: 15px;
+
 }
 
 .work-list .work img {
@@ -420,7 +441,7 @@ body::-webkit-scrollbar {
     height: 100%;
     border-radius: 10px;
     object-fit: cover;
-    transition: 0.5s;
+    transition: 0.5s ease;
 
 }
 
@@ -535,22 +556,22 @@ body::-webkit-scrollbar {
     background: #f8f9fa;
 }
 
-#newimg{
+#newimg {
     height: 320px;
 }
 
-#contacts .container{
+#contacts .container {
     display: flex;
     flex-direction: column;
 }
 
-.contact-input{
+.contact-input {
     width: 750px;
     margin-left: 10px;
-    
+
 }
 
-.contact-input .row{
+.contact-input .row {
     display: flex;
     flex-direction: column;
 }
@@ -562,7 +583,7 @@ body::-webkit-scrollbar {
     margin-bottom: 10px;
 }
 
-.section-separator{
+.section-separator {
     padding: 60px;
 }
 
@@ -705,6 +726,36 @@ body::-webkit-scrollbar {
     }
 }
 
-.row{
+.row {
     display: flex;
+}
+
+/* Fade-out effect */
+.fade-out {
+    animation: fadeOut 0.5s ease ;
+}
+
+
+
+@keyframes fadeOut {
+    from {
+        width: 100%;  
+    }
+    to {
+        width: 0%;
+    }
+}
+
+/* Fade-in effect */
+.fade-in {
+    animation: fadeIn 0.5s ease ;
+}
+
+@keyframes fadeIn {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
 }

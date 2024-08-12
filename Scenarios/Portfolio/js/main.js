@@ -51,70 +51,70 @@ document.addEventListener('scroll', setActiveClass);
 const workCardsData = [
   {
     filter: 'filter-app',
-    imgSrc: './css/work8.jpg',
+    imgSrc: './Images/work8.jpg',
     title: 'Social Media App',
     description: 'The App connects you to the talented people around the world',
     link: '#'
   },
   {
     filter: 'filter-product',
-    imgSrc: './css/work9.jpg',
+    imgSrc: './Images/work9.jpg',
     title: 'Music App',
     description: 'Stream and enjoy your favorite music from around the world',
     link: '#'
   },
   {
     filter: 'filter-branding',
-    imgSrc: './css/work10.jpg',
+    imgSrc: './Images/work10.jpg',
     title: 'Online Shopping App',
     description: 'A seamless shopping experience with the best deals and offers',
     link: '#'
   },
   {
     filter: 'filter-app',
-    imgSrc: './css/work4.jpg',
+    imgSrc: './Images/work4.jpg',
     title: 'Fitness Tracker App',
     description: 'Track your workouts and progress with this comprehensive fitness app',
     link: '#'
   },
   {
     filter: 'filter-product',
-    imgSrc: './css/work5.jpg',
+    imgSrc: './Images/work5.jpg',
     title: 'Recipe Finder App',
     description: 'Discover and share recipes from around the world',
     link: '#'
   },
   {
     filter: 'filter-branding',
-    imgSrc: './css/work6.jpg',
+    imgSrc: './Images/work6.jpg',
     title: 'Travel Planner App',
     description: 'Plan your trips and adventures with ease',
     link: '#'
   },
   {
     filter: 'filter-books',
-    imgSrc: './css/work7.jpg',
+    imgSrc: './Images/work7.jpg',
     title: 'News Aggregator App',
     description: 'Stay updated with the latest news from multiple sources',
     link: '#'
   },
   {
     filter: 'filter-app',
-    imgSrc: './css/work8.jpg',
+    imgSrc: './Images/work8.jpg',
     title: 'Language Learning App',
     description: 'Learn new languages with interactive lessons and practice',
     link: '#'
   },
   {
     filter: 'filter-product',
-    imgSrc: './css/work9.jpg',
+    imgSrc: './Images/work9.jpg',
     title: 'E-Book Reader App',
     description: 'Read and organize your e-books in a user-friendly interface',
     link: '#'
   },
   {
     filter: 'filter-branding',
-    imgSrc: './css/work10.jpg',
+    imgSrc: './Images/work10.jpg',
     title: 'Weather Forecast App',
     description: 'Get accurate and up-to-date weather forecasts for your location',
     link: '#'
@@ -139,22 +139,42 @@ workCardsData.forEach(card => {
   workListContainer.appendChild(workElement);
 });
 
+// document.addEventListener('DOMContentLoaded', function () {
+//   const filters = document.querySelectorAll('.portfolio-filters li');
+//   const items = document.querySelectorAll('.work-list .work');
+
+//   filters.forEach(filter => {
+//     filter.addEventListener('click', function () {
+//       // Remove 'glow' class from all filters and add it to the clicked filter
+//       filters.forEach(f => f.classList.remove('glow'));
+//       this.classList.add('glow');
+
+//       // Get the filter value
+//       const filterValue = this.getAttribute('data-filter');
+
+//       // Apply effects based on the filter value
+//       items.forEach(item => {
+//         if (filterValue === '*' || item.classList.contains(filterValue.replace('.', ''))) {
+//           item.classList.remove('fade-out');
+//           item.classList.add('fade-in');
+//           item.style.display = ''; // Ensure item is displayed
+//         } else {
+//           item.classList.remove('fade-in');
+//           item.classList.add('fade-out');
+//           // Delay hiding the item to allow the fade-out animation to complete
+//           setTimeout(() => {
+//             item.style.display = 'none';
+//           }, 500); // Duration should match the fade-out animation duration
+//         }
+//       });
+//     });
+//   });
+// });
 
 
 
-$(document).ready(function () {
-  var $grid = $('.work-list').isotope({
-    itemSelector: "..work",
-    layoutMode: "fitRows",
-  });
 
-  $('.portfolio .isotope-layout .isotope-filters li').on('click', function () {
-    $('.portfolio-filters li').removeClass('glow');
-    this.classList.add('glow');
-    var filterValue = $(this).attr('data-filter');
-    $grid.isotope({ filter: filterValue });
-  });
-});
+
 
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");

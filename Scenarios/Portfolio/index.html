@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="left">
-            <img src="./css/img1.jpg" alt="" srcset="">
+            <img src="./Images/img1.jpg" alt="" srcset="">
             <h2>Sumit K</h2>
             <div class="socialicon">
                 <i class="fa-brands fa-x-twitter"></i>
@@ -52,7 +52,7 @@
                         libero tenetur dolorem magnam a iste dolores deserunt. Ex ducimus excepturi, temporibus a quis
                         necessitatibus, voluptate nulla assumenda eveniet nemo aut, voluptates sapiente magnam.</p>
                     <div id="info">
-                        <img src="./css/img1.jpg" alt="">
+                        <img src="./Images/img1.jpg" alt="">
                         <div id="moreinfo">
                             <h3>Full Stack Web Developer</h3>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius cupiditate nemo tempora
@@ -79,7 +79,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="resume-col-1">
-                            <img src="./css/NewImg.jpg" alt="" srcset="">
+                            <img src="./Images/NewImg.jpg" alt="" srcset="">
                         </div>
                         <div class="resume-col-2">
                             <h1 class="sub-title">Resume</h1>
@@ -150,21 +150,21 @@
 
                             <div class="work-list" id="work-list">
                                 <div class="work">
-                                    <img src="./css/work1.jpg" alt="" srcset="">
+                                    <img src="./Images/work1.jpg" alt="" srcset="">
                                     <div class="layer">
                                         <h3>Social media App</h3>
                                         <p>The App connects you to the talented people<br> around the world</p>
                                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                     </div>
                                 </div><div class="work">
-                                    <img src="./css/work2.jpg" alt="" srcset="">
+                                    <img src="./Images/work2.jpg" alt="" srcset="">
                                     <div class="layer">
                                         <h3>Music  App</h3>
                                         <p>The App connects you to the talented people<br> around the world</p>
                                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                                     </div>
                                 </div><div class="work">
-                                    <img src="./css/work3.jpg" alt="" srcset="">
+                                    <img src="./Images/work3.jpg" alt="" srcset="">
                                     <div class="layer">
                                         <h3>Online Shopping App</h3>
                                         <p>The App connects you to the talented people<br> around the world</p>
@@ -236,7 +236,7 @@
                             <div class="col-lg-5">
                                 <div class="contact-about-area">
                                     <div class="thumbnail">
-                                        <img id="newimg" src="./css/work8.jpg" alt="contact-img">
+                                        <img id="newimg" src="./Images/work8.jpg" alt="contact-img">
                                     </div>
                                     <div class="title-area">
                                         <h4 class="title">Akash Kadam</h4>
@@ -320,6 +320,21 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="./js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            var $grid = $('.work-list').isotope({
+              itemSelector: ".work",
+              layoutMode: "fitRows",
+            });
+          
+            $('.portfolio .isotope-layout .isotope-filters li').on('click', function () {
+              $('.portfolio-filters li').removeClass('glow');
+              this.classList.add('glow');
+              var filterValue = $(this).attr('data-filter');
+              $grid.isotope({ filter: filterValue });
+            });
+          });
+    </script>
 
 </body>
 

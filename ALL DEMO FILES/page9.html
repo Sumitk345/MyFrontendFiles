@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            *{
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+            }
+            .page{
+                  width: 100%;
+                  height: 100vh;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  
+            }
+            .container{
+                  width: 40%;
+                  height: 80%;
+                  padding: 20px;
+                  border: 2px solid;
+            }
+            #heading{
+                  width: 100%;
+                  height: 75px;
+                  margin-bottom: 80px;
+                  background-color: lightgreen;
+            }
+            .boxs{
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  grid-column-gap:8px ;
+                  grid-row-gap:10px ;
+            }
+
+            #containerheading{
+                  color: green;
+                  margin-bottom: 30px;
+            }
+
+            .boxs input{
+                  border: 2px solid;
+                  padding: 15px;
+            }
+
+            #emial{
+                  grid-column: span 2;
+            }
+      </style>
+</head>
+<body>
+      <div class="page">
+            <div id="heading"></div>
+            <div class="container">
+                  <h1 id="containerheading">New User Registration</h1>
+                  <div class="boxs">
+                      <input type="text">  
+                      <input type="text">  
+                      <input type="text" id="emial" placeholder="change">  
+                      <input type="text">  
+                      <input type="text">  
+                      <input type="text">  
+                      <input type="text">  
+                      <input type="text">  
+                      <input type="text">  
+                  </div>
+            </div>
+      </div>
+</body>
+</html>
