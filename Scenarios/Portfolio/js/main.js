@@ -139,42 +139,6 @@ workCardsData.forEach(card => {
   workListContainer.appendChild(workElement);
 });
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   const filters = document.querySelectorAll('.portfolio-filters li');
-//   const items = document.querySelectorAll('.work-list .work');
-
-//   filters.forEach(filter => {
-//     filter.addEventListener('click', function () {
-//       // Remove 'glow' class from all filters and add it to the clicked filter
-//       filters.forEach(f => f.classList.remove('glow'));
-//       this.classList.add('glow');
-
-//       // Get the filter value
-//       const filterValue = this.getAttribute('data-filter');
-
-//       // Apply effects based on the filter value
-//       items.forEach(item => {
-//         if (filterValue === '*' || item.classList.contains(filterValue.replace('.', ''))) {
-//           item.classList.remove('fade-out');
-//           item.classList.add('fade-in');
-//           item.style.display = ''; // Ensure item is displayed
-//         } else {
-//           item.classList.remove('fade-in');
-//           item.classList.add('fade-out');
-//           // Delay hiding the item to allow the fade-out animation to complete
-//           setTimeout(() => {
-//             item.style.display = 'none';
-//           }, 500); // Duration should match the fade-out animation duration
-//         }
-//       });
-//     });
-//   });
-// });
-
-
-
-
-
 
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
@@ -188,4 +152,24 @@ function opentab(tabname) {
   }
   event.currentTarget.classList.add('active-link')
   document.getElementById(tabname).classList.add('active-tab')
+}
+
+
+function toggleTopic(id) {
+  const content = document.getElementById(id);
+  const icon = content.previousElementSibling.querySelector('i');
+
+  if (content.style.display === "block") {
+    content.style.display = "none";
+    icon.className = "fa fa-chevron-down";
+  } else {
+    content.style.display = "block";
+    icon.className = "fa fa-chevron-up";
+  }
+}
+
+
+function toggleMenu() {
+  var menu = document.querySelector('.left');
+  menu.classList.toggle('open');
 }

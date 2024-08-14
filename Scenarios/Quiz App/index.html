@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Responsive Quiz App</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+      <div class="quizapp">
+            <!-- Modal Structure -->
+            <div id="score-modal" class="modal">
+                  <div class="modal-content">
+                        <h2>Your Score: <span id="score"></span></h2>
+                        <button id="play-again-btn" >Play Again</button>
+                        <button id="close-btn">Close</button>
+                  </div>
+            </div>
+
+            <button type="button" class="start">Start</button>
+      </div>
+      <div class="quiz-container" style="display: none;">
+            <div class="quiz-header">
+                  <h1>Quiz App</h1>
+                  <div class="question-tracker">
+                        <div class="question-box" id="question-1">1</div>
+                        <div class="question-box" id="question-2">2</div>
+                        <div class="question-box" id="question-3">3</div>
+                        <div class="question-box" id="question-4">4</div>
+                        <div class="question-box" id="question-5">5</div>
+                        <div class="question-box" id="question-6">6</div>
+                        <div class="question-box" id="question-7">7</div>
+                        <div class="question-box" id="question-8">8</div>
+                        <div class="question-box" id="question-9">9</div>
+                        <div class="question-box" id="question-10">10</div>
+                        <div class="question-box" id="question-11">11</div>
+                        <div class="question-box" id="question-12">12</div>
+                        <div class="question-box" id="question-13">13</div>
+                        <div class="question-box" id="question-14">14</div>
+                        <div class="question-box" id="question-15">15</div>
+
+
+                  </div>
+            </div>
+            <div class="question-content">
+                  <div class="question" data-index="1">
+                        <p class="question-desc">1. Which of the following tag automatically focus on one particular
+                              form
+                              field in HTML 5?</p>
+                        <input type="radio" id="output" name="fav_language" value="output">
+                        <label for="output">A. output</label><br>
+                        <input type="radio" id="placeholder" name="fav_language" value="placeholder">
+                        <label for="placeholder">B. placeholder</label><br>
+                        <input type="radio" id="autofocus" name="fav_language" value="autofocus">
+                        <label for="autofocus">C. autofocus</label><br>
+                        <input type="radio" id="required" name="fav_language" value="required">
+                        <label for="required">D. required</label><br>
+                  </div>
+                  <div class="question" data-index="2">
+                        <p class="question-desc">2. Which HTML element is used to define a block of navigation links?
+                        </p>
+                        <input type="radio" id="nav" name="nav_links" value="nav">
+                        <label for="nav">A. &lt;nav&gt;</label><br>
+                        <input type="radio" id="footer" name="nav_links" value="footer">
+                        <label for="footer">B. &lt;footer&gt;</label><br>
+                        <input type="radio" id="header" name="nav_links" value="header">
+                        <label for="header">C. &lt;header&gt;</label><br>
+                        <input type="radio" id="section" name="nav_links" value="section">
+                        <label for="section">D. &lt;section&gt;</label><br>
+                  </div>
+                  <div class="question" data-index="3">
+                        <p class="question-desc">3. Which CSS property is used to change the text color of an element?
+                        </p>
+                        <input type="radio" id="text-color" name="text_color" value="text-color">
+                        <label for="text-color">A. text-color</label><br>
+                        <input type="radio" id="color" name="text_color" value="color">
+                        <label for="color">B. color</label><br>
+                        <input type="radio" id="font-color" name="text_color" value="font-color">
+                        <label for="font-color">C. font-color</label><br>
+                        <input type="radio" id="text-style" name="text_color" value="text-style">
+                        <label for="text-style">D. text-style</label><br>
+                  </div>
+                  <div class="question" data-index="4">
+                        <p class="question-desc">4. What is the correct HTML element for inserting a line break?</p>
+                        <input type="radio" id="br" name="line_break" value="br">
+                        <label for="br">A. &lt;br&gt;</label><br>
+                        <input type="radio" id="break" name="line_break" value="break">
+                        <label for="break">B. &lt;break&gt;</label><br>
+                        <input type="radio" id="lb" name="line_break" value="lb">
+                        <label for="lb">C. &lt;lb&gt;</label><br>
+                        <input type="radio" id="hr" name="line_break" value="hr">
+                        <label for="hr">D. &lt;hr&gt;</label><br>
+                  </div>
+                  <div class="question" data-index="5">
+                        <p class="question-desc">5. Which CSS property controls the size of an element's text?</p>
+                        <input type="radio" id="text-style" name="text_size" value="text-style">
+                        <label for="text-style">A. text-style</label><br>
+                        <input type="radio" id="font-size" name="text_size" value="font-size">
+                        <label for="font-size">B. font-size</label><br>
+                        <input type="radio" id="text-size" name="text_size" value="text-size">
+                        <label for="text-size">C. text-size</label><br>
+                        <input type="radio" id="font-style" name="text_size" value="font-style">
+                        <label for="font-style">D. font-style</label><br>
+                  </div>
+                  <div class="question" data-index="6">
+                        <p class="question-desc">6. Which HTML attribute is used to define inline styles?</p>
+                        <input type="radio" id="class" name="inline_styles" value="class">
+                        <label for="class">A. class</label><br>
+                        <input type="radio" id="style" name="inline_styles" value="style">
+                        <label for="style">B. style</label><br>
+                        <input type="radio" id="styles" name="inline_styles" value="styles">
+                        <label for="styles">C. styles</label><br>
+                        <input type="radio" id="font" name="inline_styles" value="font">
+                        <label for="font">D. font</label><br>
+                  </div>
+                  <div class="question" data-index="7">
+                        <p class="question-desc">7. What does the `display: none;` CSS rule do to an element?</p>
+                        <input type="radio" id="hides-element" name="display_none" value="hides-element">
+                        <label for="hides-element">A. Hides the element, but it still takes up space</label><br>
+                        <input type="radio" id="removes-element" name="display_none" value="removes-element">
+                        <label for="removes-element">B. Removes the element from the document flow</label><br>
+                        <input type="radio" id="invisible-element" name="display_none" value="invisible-element">
+                        <label for="invisible-element">C. Makes the element invisible, but it still takes up
+                              space</label><br>
+                        <input type="radio" id="none-of-the-above" name="display_none" value="none-of-the-above">
+                        <label for="none-of-the-above">D. None of the above</label><br>
+                  </div>
+                  <div class="question" data-index="8">
+                        <p class="question-desc">8. What does the <code>alt</code> attribute in an
+                              <code>&lt;img&gt;</code> tag do?</p>
+                        <input type="radio" id="alt-text" name="alt_attribute" value="alt-text">
+                        <label for="alt-text">A. Specifies the image source</label><br>
+                        <input type="radio" id="alt-description" name="alt_attribute" value="alt-description">
+                        <label for="alt-description">B. Provides alternative text if the image cannot be
+                              displayed</label><br>
+                        <input type="radio" id="alt-width" name="alt_attribute" value="alt-width">
+                        <label for="alt-width">C. Sets the image width</label><br>
+                        <input type="radio" id="alt-height" name="alt_attribute" value="alt-height">
+                        <label for="alt-height">D. Defines the image height</label><br>
+                  </div>
+
+                  <div class="question" data-index="9">
+                        <p class="question-desc">9. Which CSS property is used to add space between the text and the
+                              border of an element?</p>
+                        <input type="radio" id="padding" name="spacing" value="padding">
+                        <label for="padding">A. padding</label><br>
+                        <input type="radio" id="margin" name="spacing" value="margin">
+                        <label for="margin">B. margin</label><br>
+                        <input type="radio" id="border-spacing" name="spacing" value="border-spacing">
+                        <label for="border-spacing">C. border-spacing</label><br>
+                        <input type="radio" id="border-radius" name="spacing" value="border-radius">
+                        <label for="border-radius">D. border-radius</label><br>
+                  </div>
+
+                  <div class="question" data-index="10">
+                        <p class="question-desc">10. What is the default value of the <code>position</code> property in
+                              CSS?</p>
+                        <input type="radio" id="fixed" name="position" value="fixed">
+                        <label for="fixed">A. fixed</label><br>
+                        <input type="radio" id="absolute" name="position" value="absolute">
+                        <label for="absolute">B. absolute</label><br>
+                        <input type="radio" id="relative" name="position" value="relative">
+                        <label for="relative">C. relative</label><br>
+                        <input type="radio" id="static" name="position" value="static">
+                        <label for="static">D. static</label><br>
+                  </div>
+
+                  <div class="question" data-index="11">
+                        <p class="question-desc">11. Which HTML tag is used to create a drop-down list?</p>
+                        <input type="radio" id="select" name="dropdown" value="select">
+                        <label for="select">A. <code>&lt;select&gt;</code></label><br>
+                        <input type="radio" id="input" name="dropdown" value="input">
+                        <label for="input">B. <code>&lt;input&gt;</code></label><br>
+                        <input type="radio" id="dropdown" name="dropdown" value="dropdown">
+                        <label for="dropdown">C. <code>&lt;dropdown&gt;</code></label><br>
+                        <input type="radio" id="list" name="dropdown" value="list">
+                        <label for="list">D. <code>&lt;list&gt;</code></label><br>
+                  </div>
+
+                  <div class="question" data-index="12">
+                        <p class="question-desc">12. How do you include an external CSS file in an HTML document?</p>
+                        <input type="radio" id="style-src" name="css-link" value="style-src">
+                        <label for="style-src">A. <code>&lt;style src="styles.css"&gt;&lt;/style&gt;</code></label><br>
+                        <input type="radio" id="link" name="css-link" value="link">
+                        <label for="link">B. <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></label><br>
+                        <input type="radio" id="script-src" name="css-link" value="script-src">
+                        <label for="script-src">C.
+                              <code>&lt;script src="styles.css"&gt;&lt;/script&gt;</code></label><br>
+                        <input type="radio" id="css-src" name="css-link" value="css-src">
+                        <label for="css-src">D. <code>&lt;css src="styles.css"&gt;&lt;/css&gt;</code></label><br>
+                  </div>
+
+                  <div class="question" data-index="13">
+                        <p class="question-desc">13. What does the <code>box-sizing: border-box;</code> CSS property do?
+                        </p>
+                        <input type="radio" id="includes-box" name="box-sizing" value="includes-box">
+                        <label for="includes-box">A. It makes the width and height include padding and
+                              border</label><br>
+                        <input type="radio" id="content-box" name="box-sizing" value="content-box">
+                        <label for="content-box">B. It sets the box model to content-box</label><br>
+                        <input type="radio" id="hide-border" name="box-sizing" value="hide-border">
+                        <label for="hide-border">C. It hides the border of an element</label><br>
+                        <input type="radio" id="remove-padding" name="box-sizing" value="remove-padding">
+                        <label for="remove-padding">D. It removes padding from the element</label><br>
+                  </div>
+
+                  <div class="question" data-index="14">
+                        <p class="question-desc">14. Which HTML element is used to define important text?</p>
+                        <input type="radio" id="strong" name="important-text" value="strong">
+                        <label for="strong">A. <code>&lt;strong&gt;</code></label><br>
+                        <input type="radio" id="em" name="important-text" value="em">
+                        <label for="em">B. <code>&lt;em&gt;</code></label><br>
+                        <input type="radio" id="b" name="important-text" value="b">
+                        <label for="b">C. <code>&lt;b&gt;</code></label><br>
+                        <input type="radio" id="i" name="important-text" value="i">
+                        <label for="i">D. <code>&lt;i&gt;</code></label><br>
+                  </div>
+
+                  <div class="question" data-index="15">
+                        <p class="question-desc">15. How can you apply styles to an element when it is being hovered
+                              over with the mouse?</p>
+                        <input type="radio" id="hover" name="hover-style" value="hover">
+                        <label for="hover">A. Using the <code>hover</code> pseudo-class</label><br>
+                        <input type="radio" id="active" name="hover-style" value="active">
+                        <label for="active">B. Using the <code>active</code> pseudo-class</label><br>
+                        <input type="radio" id="focus" name="hover-style" value="focus">
+                        <label for="focus">C. Using the <code>focus</code> pseudo-class</label><br>
+                        <input type="radio" id="visited" name="hover-style" value="visited">
+                        <label for="visited">D. Using the <code>visited</code> pseudo-class</label><br>
+                  </div>
+
+            </div>
+            <div class="quiz-footer">
+                  <button id="prev-btn" class="disabled">Previous</button>
+                  <button id="mark-btn">Mark for Review</button>
+                  <button id="next-btn">Next</button>
+                  <button id="submit-btn" style="display:none;">Submit</button>
+            </div>
+      </div>
+      <script src="./js/script.js"></script>
+</body>
+
+</html>
