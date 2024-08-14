@@ -115,13 +115,15 @@ document.querySelector(".start").addEventListener('click', () => {
 })
 
 playAgainBtn.addEventListener('click', () => {
-      modal.style.display = 'none'; 
+      modal.style.display = 'none';
       storeAnswer = Array(15).fill('none');
       markedQuestions = new Set()
       currentQuestion = 1;
       document.querySelectorAll('input[type="radio"]').forEach((input) => {
             input.checked = false;
       });
+      nextBtn.style.display = 'inline-block';
+      submitBtn.style.display = 'none';
       showQuestion(currentQuestion);
       updateMarkedQuestions();
 });
@@ -129,9 +131,9 @@ playAgainBtn.addEventListener('click', () => {
 
 closeBtn.addEventListener('click', () => {
       location.reload();
-      document.querySelector(".start").style.display = 'inline-block'
-      document.querySelector(".quiz-container").style.display = 'none'
-      modal.style.display = 'none';
+      // document.querySelector(".start").style.display = 'inline-block'
+      // document.querySelector(".quiz-container").style.display = 'none'
+      // modal.style.display = 'none';
 });
 
 
