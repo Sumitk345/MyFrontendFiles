@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <script>
+            let data = {
+                  "gadgets": [
+                        {
+                              id: 1, category: "laptop", products: [
+                                    { company: "hp", configuration: "220GB SSD / 8GB RAM / I3 Intel" },
+                                    { company: "lenovo", configuration: "1 TB HDD / 12 GB RAM / I5 Intel" },
+                                    { company: "asus", configuration: "500 GB HDD / 250 GB SSD / 8 GB RAM / I7 Intel" }]
+                        },
+
+                        {
+                              id: 2, category: "smartwatch", products: [
+                                    { company: "aple", configuration: "13 Apps / 20 Hrs Standby / 40 Features" },
+                                    { company: "samsung", configuration: "14 Apps / 13 Hrs Standby / 34 Features" }]
+                        },
+
+                        {
+                              id: 3, category: "camera", products: [
+                                    { company: "sony", configuration: "40X Zoom / 3 Hrs Standby / 40 GB Storage" },
+                                    { company: "cannon", configuration: "30X Zoom / 5 Hrs Standby / 50 GB Storage" }]
+                        }
+                  ]
+            }
+
+            certifications = ["Amazon Solution Architects", "Azure Cloud Developer", "Google Cloud Developer"]
+            colors = {
+                  blue: "#FF8123",
+                  orange: "#FF7831",
+                  yellow: "#90FF2",
+                  pink: "#77FF22"
+            }
+
+            console.log("1. Write a function to add one more color and color - code in given array then return updated colors’s array from function")
+            function addcolor(color, code) {
+                  colors = { ...colors, [color]: code }
+            }
+            addcolor("white", "#ff438f")
+            addcolor("red", "#fB568f")
+
+            console.log(colors)
+
+            console.log("2. Write a function to count number of products for each gadget and return from function")
+
+            var newarr = data.gadgets.map((obj) => {
+                  return { Gadget: obj.category, Count: obj.products.length }
+            }
+            )
+            console.log(newarr)
+
+            console.log("//3. Write a function to take any gadget name as argument and check that exist in array or not.Return true if exist otherwise return false");
+            function findgadget(demoname) {
+                  var newarr = data.gadgets.filter((obj, index) => {
+                        return obj.category === demoname;
+
+                  })
+                  return newarr.length > 0 ? true : false;
+            }
+
+            console.log(findgadget("laptop"))
+
+            console.log("//4. Write a function to take any gadget name as argument and delete from array. show updated array record return from function");
+
+            function deletegadget(demoname) {
+                  var newarr = data.gadgets.filter((obj) => {
+                        return obj.category != demoname;
+
+                  })
+                  return newarr;
+            }
+
+            console.log(deletegadget("smartwatch"))
+
+
+            console.log("Q5. Write a function to prepare array containing product names of each gadget  along with its configuration order by product names in each category");
+            var newarr = data.gadgets.map((obj => {
+                  return obj.products.map(item => ({ Product: item.company, Config: item.configuration })).
+                        sort((a, b) => a.Product.localeCompare(b.Product));
+            }))
+
+            console.log(newarr)
+
+            console.log("6. Write a function to update Certifications in following format");
+            //Sample Output: 
+            //[
+            //{‘index’:0, ‘certification’: ‘AMAZON Solution Architects’},
+            //{‘index’:1, ‘certification’: ‘AZURE Cloud Developer’},
+            //{‘index’:2, ‘certification’: ‘GOOGLE Cloud Developer’}
+            //]"
+
+            var newarr = certifications.map((item, index) => {
+                  return { index: index, certification: item }
+            })
+
+            console.log(newarr)
+
+
+            console.log("//Q7. Write a function to print which smartwatch has maximum number of apps");
+            function findMaxApp() {
+                  maxapp = 0;
+                  smartwatchMaxApp = "";
+                  var newarr = data.gadgets.filter((obj) => {
+                        return obj.category == "smartwatch"
+                  })
+
+                  newarr.forEach((item) => {
+                        item.products.forEach((product) => {
+                              console.log()
+                              if (parseInt(product.configuration.slice(0, 3)) > maxapp) {
+                                    maxapp = parseInt(product.configuration.slice(0, 3));
+                                    smartwatchMaxApp = product.company;
+                              }
+                        })
+                  })
+
+                  console.log(maxapp)
+                  console.log(smartwatchMaxApp)
+            }
+            findMaxApp()
+
+            console.log("Q8. Write a function to print which camera has maximum storage space.");
+
+            function findMaxStorage() {
+                  maxstore = 0;
+                  cameramaxstore = "";
+                  var newarr = data.gadgets.filter((obj) => {
+                        return obj.category == "camera"
+                  })
+
+                  console.log(newarr)
+
+                  newarr.forEach((item) => {
+                        item.products.forEach((product) => {
+                              console.log()
+                              if (parseInt(product.configuration.split("/")[2].slice(0, 3)) > maxapp) {
+                                    maxapp = parseInt(product.configuration.split("/")[2].slice(0, 3));
+                                    smartwatchMaxApp = product.company;
+                              }
+                        })
+                  })
+
+                  console.log(maxapp + " GB")
+                  console.log(smartwatchMaxApp)
+            }
+            findMaxStorage()
+
+            console.log("Q9. Write a function to print which Laptop has less Storage Capacity.");
+
+            //220GB SSD 
+            // 1TB HDD 
+            //500 GB HDD 
+            function findLessStorageLaptop() {
+                  var LessStorageLaptop = "";
+                  var minStorage = Infinity; 
+              
+                  var laptops = data.gadgets.filter((obj) => obj.category === "laptop");
+              
+                  laptops.forEach((item) => {
+                      item.products.forEach((product) => {
+                          let storageStr = product.configuration.split("/")[0];
+                          let storageInGB;
+              
+                          if (storageStr.includes("TB")) {
+                              storageInGB = Number(storageStr.split("TB")[0]) * 1024; 
+                          } else {
+                              storageInGB = Number(storageStr.split("GB")[0]); 
+                          }
+              
+                          if (storageInGB < minStorage) {
+                              minStorage = storageInGB;
+                              LessStorageLaptop = product.company;
+                          }
+                      });
+                  });
+              
+                  console.log("Laptop with the least storage: " + LessStorageLaptop);
+                  console.log("Minimum storage in GB: " + minStorage);
+              }
+              
+              findLessStorageLaptop();
+              
+              console.log("Q10. Define a function to filter laptops by name of processor")
+
+              function filterLaptop(processor) {
+                  var laptops = data.gadgets.filter(obj => obj.category === "laptop");
+                  
+                  var filteredLaptops = laptops.flatMap(laptop => 
+                      laptop.products
+                          .filter(product => product.configuration.includes(processor))
+                          .map(product => product.company)
+                  );
+              
+                  return filteredLaptops;
+              }
+              
+              let processor = "I7";
+              console.log(filterLaptop(processor));
+              
+
+      </script>
+</body>
+
+</html>

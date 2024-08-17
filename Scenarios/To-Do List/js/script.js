@@ -133,4 +133,11 @@ window.onload = () => {
     displayTasks();
 }
 
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        addtask();
+    }
+});
+
 addbtn.addEventListener('click', addtask);
+
