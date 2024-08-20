@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>BootStrap Ex4</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <style>
+        .course{
+            background-color: darkblue;
+            color:white;           
+        }
+
+        .course:hover{
+            animation:ListEffect 2s;
+        }
+
+        @keyframes ListEffect{
+            from{
+                transform: scale(0.9);
+                background-color: darkred;
+                color:yellow;
+            }
+
+            to{
+                transform: scale(1);
+                background-color: orangered;
+                color:yellow;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Offcanvas Component</h1>
+    <hr>
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample">
+        Button with data-bs-target
+    </button>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Courses</h5>
+        </div>
+        <div class="offcanvas-body">
+                <ul class="list-group">
+                    <li class="list-group-item course list-group-item-action">Python</li>
+                    <li class="list-group-item course list-group-item-action">Java</li>
+                    <li class="list-group-item course list-group-item-action">SQL</li>
+                    <li class="list-group-item course list-group-item-action">Swift</li>
+                    <li class="list-group-item course list-group-item-action">React</li>
+                    <li class="list-group-item course list-group-item-action">Angular</li>
+                    <li class="list-group-item course list-group-item-action">Vue.Js</li>
+                    <li class="list-group-item course list-group-item-action">Node.Js</li>
+                    <li class="list-group-item course list-group-item-action">Express.Js</li>
+                    <li class="list-group-item course list-group-item-action">Spring Boot</li>
+                </ul>
+        </div>
+
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

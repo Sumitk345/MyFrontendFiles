@@ -13,9 +13,9 @@ body {
 
 
 .quiz-container {
-      height: 70%;
+      height: 100%;
       width: 100%;
-      max-width: 800px;
+      min-width: 100%;
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -61,8 +61,9 @@ body {
 
 .question-content {
       height: 50%;
-      width: 100%;
+      width: 98%;
       display: flex;
+      margin: 0 auto;
       overflow: hidden;
       animation: fadeIn 0.5s ease forwards;
 }
@@ -81,7 +82,9 @@ body {
 }
 
 .quiz-footer {
+      width: 99%;
       display: flex;
+      margin: 0 auto;
       justify-content: space-between;
       margin-top: 20px;
 }
@@ -116,7 +119,7 @@ button.disabled {
 .question-tracker {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-evenly;
       gap: 10px;
 }
 
@@ -124,18 +127,20 @@ button.disabled {
       width: 30px;
       height: 30px;
       border: 2px solid #ccc;
-      border-radius: 50%;
+      border-radius: 0%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.3s, color 0.3s ,border-radius 0.3s;
 }
 
 .question-box.current {
       background-color: #007bff;
       color: #fff;
       border-color: #007bff;
+      border-radius: 50%;
+
 }
 
 .question-box.marked {
@@ -153,9 +158,15 @@ button.disabled {
 
 .question-content .question input {
 
-      font-size: 26px;
-      margin: 15px 0;
+      font-size: 1.15rem;
+      margin: 25px 0;
 }
+
+
+.question-content .question label , .question-desc{
+      font-size: 1.15rem;
+}
+
 
 .question-content .question.active {
       display: block;

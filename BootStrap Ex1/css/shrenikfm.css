@@ -1,0 +1,28 @@
+
+.body{
+    background-color: lightcyan;
+    padding:10px;
+}
+
+h1{
+    color:darkgrey;
+    margin:0px;
+    padding:10px;
+    align-items: center;
+}
+
+p{
+    font:normal 14px 'calibri';
+    text-shadow: 1px 1px 4px lightgrey;
+    color:darkred;
+}
+
+.border{
+    border:1px solid black;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+

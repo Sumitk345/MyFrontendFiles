@@ -158,18 +158,12 @@ function opentab(tabname) {
 function toggleTopic(id) {
   const content = document.getElementById(id);
   const icon = content.previousElementSibling.querySelector('i');
-
+  
   if (content.style.display === "block") {
-    content.style.display = "none";
-    icon.className = "fa fa-chevron-down";
+      content.style.display = "none";
+      icon.className = "fa fa-chevron-down";
   } else {
-    content.style.display = "block";
-    icon.className = "fa fa-chevron-up";
+      content.style.display = "block";
+      icon.className = "fa fa-chevron-up";
   }
-}
-
-
-function toggleMenu() {
-  var menu = document.querySelector('.left');
-  menu.classList.toggle('open');
 }

@@ -9,8 +9,8 @@ const scoreSpan = document.getElementById('score');
 const playAgainBtn = document.getElementById('play-again-btn');
 const closeBtn = document.getElementById('close-btn');
 let markedQuestions = new Set();
-let storeAnswer = Array(15).fill('none');
-let possibleAnswers = ['output', 'footer', 'font-color', 'break', 'text-size', 'styles', 'removes-element', 'target', 'enctype', 'method', 'src', 'href', 'readonly', 'formaction', 'legend'];
+let storeAnswer = Array(20).fill('none');
+let possibleAnswers = ['autofocus', 'nav', 'color', 'br', 'font-size', 'style', 'removes-element', 'alt-description', 'padding', 'static', 'select', 'link', 'includes-box', 'strong', 'hover', 'target', 'method', 'src', 'readonly', 'ul'];
 
 let currentQuestion = 1;
 

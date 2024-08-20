@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>BootStrap Ex4</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <h1>Modal Dialog Component</h1>
+    <hr>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        click to login
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login Form</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="m-2">
+                        <input type="email" placeholder="email" class="form-control" />
+                    </div>
+
+                    <div class="m-2">
+                        <input type="password" placeholder="password" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
