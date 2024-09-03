@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: aliceblue;
+  font-family: 'Poppins', sans-serif;
+}
+
+.top-logos {
+  font-size: 1.3rem;
+}
+
+
+.btn.btn-danger {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.carousel-item {
+  max-height: 80vh;
+  object-fit: cover;
+  background-position: center;
+}
+
+.card img {
+  width: 100%;
+  padding-bottom: 1vw;
+  min-height: 250px;
+  height: auto;
+  object-fit: cover;
+  grid-column: span 2;
+  
+}
+
+#cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 36px;
+}
+
+.card-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5px;
+}
+
+.card-body .blocks {
+  margin-bottom: 1.2rem;
+}
+
+.card-body span {
+  display: block;
+}
+
+.blocks span:first-child {
+  font-weight: bold;
+}
+
+.price {
+  font-size: 1.4rem;
+  color: green;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.review {
+  text-align: right;
+  font-size: 1.2rem;
+  color: rgb(0, 200, 255);
+}
+
+
+@media (max-width: 440px) {
+
+  .dropdown-toggle {
+    padding-left: 0;
+  }
+
+  .searchbar-body {
+    margin-left: 30px;
+    display: block !important;
+  }
+
+  .card-body span {
+    font-size: 1.2rem;
+    display: block;
+  }
+}
+
+.card-title{
+  color: red;
+  font-size: 1.2rem;
+  grid-column:  span 2;
+}
+
+.card-title strong{
+  color: rgb(67, 67, 67);
+  font-weight: 400;
+}

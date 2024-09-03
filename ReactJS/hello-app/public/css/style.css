@@ -1,0 +1,12 @@
+.img-thumbnail{
+      width:250px;
+      height:170px;
+      margin:10px 15px 10px 15px;
+      border-radius: 10px;
+      box-shadow: 8px 8px 15px grey;
+      opacity: 0.8;
+  }
+  
+  .img-thumbnail:hover{
+      opacity: 1;
+  }

@@ -2,63 +2,404 @@
 <html lang="en">
 
 <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background-color: aliceblue;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .top-logos {
+      font-size: 1.3rem;
+    }
+
+
+    .btn.btn-danger {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .carousel-item {
+      max-height: 80vh;
+      object-fit: cover;
+      background-position: center;
+    }
+
+    .card img {
+      width: 100%;
+      padding-bottom: 1vw;
+      min-height: 250px;
+      height: auto;
+      object-fit: cover;
+      grid-column: span 2;
+
+    }
+
+    #cards {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 36px;
+    }
+
+    .card-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 5px;
+    }
+
+    .card-body .blocks {
+      margin-bottom: 1.2rem;
+    }
+
+    .card-body span {
+      display: block;
+    }
+
+    .blocks span:first-child {
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 1.4rem;
+      color: green;
+    }
+
+    .card {
+      border-radius: 10px;
+    }
+
+    .review {
+      text-align: right;
+      font-size: 1.2rem;
+      color: rgb(0, 200, 255);
+    }
+
+
+    @media (max-width: 440px) {
+
+      .dropdown-toggle {
+        padding-left: 0;
+      }
+
+      .searchbar-body {
+        margin-left: 30px;
+        display: block !important;
+      }
+
+      .card-body span {
+        font-size: 1.2rem;
+        display: block;
+      }
+
+    }
+
+    .card-title{
+      color: red;
+      font-size: 1.2rem;
+      grid-column:  span 2;
+    }
+    
+    .card-title strong{
+      color: rgb(67, 67, 67);
+      font-weight: 400;
+    }
+
+  </style>
 </head>
 
 <body>
-      <h1>
-            Demo Solving Codes
-      </h1>
-      <script>
-            let arr = [0, 1];
-            for (let i = 0; i < 6; i++) {
-                  let x = parseInt(arr[arr.length - 1] + arr[arr.length - 2]);
-                  arr.splice(arr.length, 0, x);
-            }
-            <!-- console.log(arr) -->
+  <section id="header">
+    <nav class="navbar navbar-expand-lg " style="background-color: rgba(125, 125, 125, 0.603);">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><button type="button" class="btn btn-danger"><i
+              class="fa-solid fa-car fs-2 me-3 top-logos" style="color: #ffffff;"></i>AUTO WORLD</button></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i
+                  class="fa-duotone fa-solid fa-gift me-2 top-logos"></i>Offers</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link active" href="#"><i class="fa-duotone fa-solid fa-headset me-2 top-logos"></i>Contact
+                Us</a>
 
-            const person1 = {
-                  firstName: "John",
-                  lastName: "Doe",
-                  age: 50,
-                  eyeColor: "blue"
-                };
-            
-                person1.firstName = "Harry"
-                console.log(person1.firstName+person1.lastName)
-                console.log(person1)
-                person1["hobbies"] =["Sports","cycling"];
-                console.log(person1)
-                console.log(person1.hobbies)
-                console.log(person1.hobbies[0])
-                delete person1.age
-                console.log(person1)
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <button type="button" class="btn btn-dark">Signup</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </section>
+  <section id="crausoul">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./All IN ONE IMAGES/car-rent1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./All IN ONE IMAGES/car-rent2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./All IN ONE IMAGES/car-rent3.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  <section id="searchbar" style="background-color: rgba(125, 125, 125, 0.603); max-width: 100%;" class=" rounded-2 m-3">
+    <nav class="navbar">
+      <div class="searchbar-body d-flex">
+        <div class="btn-group">
+          <button type="button" class="btn me-2 dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static"
+            aria-expanded="false">
+            <i class="fa-duotone fa-solid fa-filter top-logos " style="--fa-secondary-color: #000000;"></i>Select
+            Category
+          </button>
+          <ul class="dropdown-menu dropdown-menu-lg-end">
+            <li><button class="dropdown-item" type="button">Action</button></li>
+            <li><button class="dropdown-item" type="button">Another action</button></li>
+            <li><button class="dropdown-item" type="button">Something else here</button></li>
+          </ul>
+        </div>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 " type="search" placeholder="Company/Modal" aria-label="Search">
+          <button type="button" class="btn btn-dark  me-2  ">Search</button>
+        </form>
+      </div>
+    </nav>
+  </section>
+  <section id="cards" class="m-3">
+  </section>
 
-                person1["programs"] = 
-                [
-                {
-                  id:1,
-                  programName:"Addition of numbers"
-                },
-                {
-                  id:2,
-                  programName:"Substraction of numbers"
-                }]
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script>
+    const data = [
+      {
+        "id": 1,
+        "date": "12-Mar-2021",
+        "review": "Review 205",
+        "title": "BYD atto 3",
+        "type": "Sedan",
+        "image": "car1.jpg",
+        "mileage": "45000 KM",
+        "location": "Delhi",
+        "engine": "3.5 Diesel",
+        "transmission": "Automatic",
+        "price": "Rs 1,60,000"
+      },
+      {
+        "id": 2,
+        "date": "15-Apr-2021",
+        "review": "Review 310",
+        "title": "Skoda Kushaq",
+        "type": "Hatchback",
+        "image": "car2.webp",
+        "mileage": "35000 KM",
+        "location": "Mumbai",
+        "engine": "2.0 Petrol",
+        "transmission": "Manual",
+        "price": "Rs 1,20,000"
+      },
+      {
+        "id": 3,
+        "date": "20-May-2021",
+        "review": "Review 415",
+        "title": "Hyundai Exter",
+        "type": "SUV",
+        "image": "car3.webp",
+        "mileage": "30000 KM",
+        "location": "Bangalore",
+        "engine": "1.8 Petrol",
+        "transmission": "Automatic",
+        "price": "Rs 1,50,000"
+      },
+      {
+        "id": 4,
+        "date": "10-Jun-2021",
+        "review": "Review 520",
+        "title": "Hyundai Tucson",
+        "type": "SUV",
+        "image": "car4.jpg",
+        "mileage": "60000 KM",
+        "location": "Chennai",
+        "engine": "3.0 Diesel",
+        "transmission": "Automatic",
+        "price": "Rs 2,00,000"
+      },
+      {
+        "id": 5,
+        "date": "22-Jul-2021",
+        "review": "Review 625",
+        "title": "Volkswagen Tiguan",
+        "type": "Sedan",
+        "image": "car5.jpg",
+        "mileage": "40000 KM",
+        "location": "Hyderabad",
+        "engine": "2.2 Diesel",
+        "transmission": "Manual",
+        "price": "Rs 1,30,000"
+      },
+      {
+        "id": 6,
+        "date": "18-Aug-2021",
+        "review": "Review 730",
+        "title": "Volvo XC60 ",
+        "type": "Hatchback",
+        "image": "car6.webp",
+        "mileage": "25000 KM",
+        "location": "Pune",
+        "engine": "1.5 Petrol",
+        "transmission": "Automatic",
+        "price": "Rs 1,40,000"
+      },
+      {
+        "id": 7,
+        "date": "25-Sep-2021",
+        "review": "Review 835",
+        "title": "BMW X5",
+        "type": "SUV",
+        "image": "car7.webp",
+        "mileage": "50000 KM",
+        "location": "Kolkata",
+        "engine": "2.5 Diesel",
+        "transmission": "Manual",
+        "price": "Rs 1,70,000"
+      },
+      {
+        "id": 8,
+        "date": "30-Oct-2021",
+        "review": "Review 940",
+        "title": "Toyota Fortuner",
+        "type": "SUV",
+        "image": "car8.webp",
+        "mileage": "55000 KM",
+        "location": "Jaipur",
+        "engine": "3.0 Petrol",
+        "transmission": "Automatic",
+        "price": "Rs 1,90,000"
+      },
+      {
+        "id": 9,
+        "date": "12-Nov-2021",
+        "review": "Review 1045",
+        "title": "Tata Safari Facelift",
+        "type": "SUV",
+        "image": "car9.jpg",
+        "mileage": "48000 KM",
+        "location": "Ahmedabad",
+        "engine": "2.8 Diesel",
+        "transmission": "Manual",
+        "price": "Rs 1,60,000"
+      },
+      {
+        "id": 10,
+        "date": "20-Dec-2021",
+        "review": "Review 1150",
+        "title": "Tata Nexon",
+        "type": "SUV",
+        "image": "car10.jpg",
+        "mileage": "32000 KM",
+        "location": "Surat",
+        "engine": "1.6 Petrol",
+        "transmission": "Automatic",
+        "price": "Rs 1,30,000"
+      },
+      {
+        "id": 11,
+        "date": "15-Jan-2022",
+        "review": "Review 1255",
+        "title": "Hyundai Creta",
+        "type": "Sedan",
+        "image": "car11.webp",
+        "mileage": "36000 KM",
+        "location": "Lucknow",
+        "engine": "2.0 Diesel",
+        "transmission": "Manual",
+        "price": "Rs 1,20,000"
+      },
+      {
+        "id": 12,
+        "date": "10-Feb-2022",
+        "review": "Review 1360",
+        "title": "Mahindra XUV 700",
+        "type": "SUV",
+        "image": "car12.jpg",
+        "mileage": "58000 KM",
+        "location": "Chandigarh",
+        "engine": "2.5 Petrol",
+        "transmission": "Automatic",
+        "price": "Rs 1,80,000"
+      }
+    ];
 
-                console.log(person1.programs[0].id);
-                console.log(person1.programs[0].programName);
-                console.log(person1.programs)
-
-                console.log(person1.programs[1].programName);
-                person1.programs[1].programName = "Multiplication of numbers";
-
-                console.log(person1.programs)
-
-                delete person1.programs[0].programName
-                console.log(person1)
-      </script>
+    var parentcard = document.getElementById("cards");
+    data.map(item=>{
+      var card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+          <div class="card-body">
+          <span class="mx-2">${item.date}</span>
+          <span class="review">${item.review}</span>
+          <p class="card-title py-2">${item.title}<strong>(${item.type})</strong></p>
+          <img src="./All IN ONE IMAGES/${item.image}" class="card-img-top" alt="...">
+  
+          <div class="blocks">
+            <span>Mileage</span>
+            <span>${item.mileage}</span>
+          </div>
+          <div class="blocks">
+            <span>Location</span>
+            <span>${item.location}</span>
+          </div>
+          <div class="blocks">
+            <span>Engine</span>
+            <span>${item.engine}</span>
+          </div>
+          <div class="blocks">
+            <span>Transmision</span>
+            <span>${item.transmission}</span>
+          </div>
+          <div class="blocks price">
+            <span>${item.price}</span>
+          </div>
+          <div class="blocks">
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+          </div>`
+        parentcard.append(card);
+    })
+    
+  </script>
 </body>
 
 </html>
