@@ -1,46 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-      <style>
-            body
-            {
-                  height: 100vh;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
- 
-            }
-            button
-            {
-                  width: 100px;
-                  border-radius: 20px;
-                  padding: 10px;
-                  font-size: 17px;
-                  font-family: 'Courier New', Courier, monospace;
-                  font-weight: bold;
-                  background-color: red;
-                  color: white;
-                  transition: all 1s ease;
-            }
-            .change
-            {
-                  
-                  transform: rotateY(360deg);
-                  background-color: green;
-            }
-      </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        h3{
+            padding-bottom: 5vw;
+        }
+        body {
+            margin: 3vw;
+            background-color: #333;
+            color: #fff;
+            max-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            position: relative;
+            background-color: #fff;
+            color: #000;
+            width: 100%;
+            max-width: 900px;
+            min-height: 100%;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .form-outline {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .form-label {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            background-color: #fff;
+            padding: 0 5px;
+            transition: all 0.2s ease;
+            font-size: 16px;
+            color: #999;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        .form-control:focus {
+            border-color: #2196F3;
+        }
+        input:focus ~ label,
+        input:valid ~ label {
+            top: 0px;
+            font-size: 12px;
+            color: #2196F3;
+            background-color: #fff;
+            padding: 0 5px;
+            left: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+        .btn-submit {
+            background-color: #2196F3;
+            color: #fff;
+        }
+        .btn-submit:hover {
+            background-color: #1976D2;
+        }
+        .btn-reset {
+            background-color: #eee;
+            color: #000;
+            margin-left: 10px;
+        }
+        .btn-reset:hover {
+            background-color: #ddd;
+        }
+        .output-para {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
 <body>
-      <button id="btn" class="change" onclick="change()">Click</button>
-      <script>
-            var x = document.getElementById("btn");
-            function change(){
-                  
-                  x.classList.toggle("change")
-            }
-      </script>
+    <div class="container">
+        <h3>Student Registration Form</h3>
+        <div class="form-outline">
+            <input type="text" id="firstname" class="form-control" required>
+            <label for="firstname" class="form-label">First name</label>
+        </div>
+        <div class="form-outline">
+            <input type="text" id="middlename" class="form-control" required>
+            <label for="middlename" class="form-label">Middle name</label>
+        </div>
+        <div class="form-outline">
+            <input type="text" id="lastname" class="form-control" required>
+            <label for="lastname" class="form-label">Last name</label>
+        </div>
+        <div class="form-outline">
+            <input type="text" id="location" class="form-control" required>
+            <label for="location" class="form-label">Address</label>
+        </div>
+        <div class="form-outline">
+            <input type="text" id="state" class="form-control" required>
+            <label for="state" class="form-label">State</label>
+        </div>
+        <div class="form-outline">
+            <input type="text" id="contact" class="form-control" required>
+            <label for="contact" class="form-label">Contact</label>
+        </div>
+        <div class="form-outline">
+            <input type="text" id="email" class="form-control" required>
+            <label for="email" class="form-label">Email ID</label>
+        </div>
+        <div class="form-outline">
+            <input type="text" id="qualification" class="form-control" required>
+            <label for="qualification" class="form-label">Qualification</label>
+        </div>
+        <div class="form-outline">
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Female" required> Female
+            <input type="radio" name="gender" value="Male" required> Male
+            <input type="radio" name="gender" value="Other" required> Other
+        </div>
+        <div class="btn-box">
+            <button class="btn btn-submit" onclick="submitForm()">Submit Form</button>
+            <button class="btn btn-reset" onclick="resetForm()">Reset All</button>
+        </div>
+        <p class="output-para"></p>
+    </div>
+
+    <script>
+        function submitForm() {
+            let person = {
+                fullname: document.getElementById('firstname').value + " " + document.getElementById('middlename').value + " " + document.getElementById('lastname').value,
+                location: document.getElementById('location').value,
+                state: document.getElementById('state').value,
+                contact: document.getElementById('contact').value,
+                email: document.getElementById('email').value,
+                qualification: document.getElementById('qualification').value,
+                gender: document.querySelector('input[name="gender"]:checked').value
+            };
+            const myJSON = JSON.stringify(person, null, 8);
+            const formattedJSON = myJSON.replace(/\n/g, "<br>").replace(/  /g, "&nbsp;&nbsp;");
+            document.querySelector(".output-para").innerHTML = formattedJSON;
+        }
+        function resetForm() {
+            document.querySelector(".container").reset();
+            document.querySelector(".output-para").innerHTML = '';
+        }
+    </script>
 </body>
 </html>

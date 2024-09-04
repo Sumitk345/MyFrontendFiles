@@ -3,22 +3,73 @@ import { useState } from "react";
 import './App.css';
 
 function App() {
-
-  let [password, storePassword] = useState("");
-
+  let [firstname, storeFirstname] = useState("");
+  let [lastname, storeLastname] = useState("");
+  let [middlename, storeMiddlename] = useState("");
+  let [location, storeLocation] = useState("");
+  let [gender, storeGender] = useState("");
+  let [state, storeState] = useState("");
+  let [contact, storeContact] = useState("");
+  let [email, storeEmail] = useState("");
+  let [qualification, storeQualification] = useState("");
 
   let readFirstName = (event) => {
-    // password = event.target.value;
-    storePassword(event.target.value);
-  }
-  console.log(password);
+    storeFirstname(event.target.value);
+  };
 
+  let readLastName = (event) => {
+    storeLastname(event.target.value);
+  };
+
+  let readMiddleName = (event) => {
+    storeMiddlename(event.target.value);
+  };
+
+  let readLocation = (event) => {
+    storeLocation(event.target.value);
+  };
+
+
+
+  let readGender = (event) => {
+    storeGender(event.target.value);
+  };
+
+  let readState = (event) => {
+    storeState(event.target.value);
+  };
+
+  let readContact = (event) => {
+    storeContact(event.target.value);
+  };
+
+  let readEmail = (event) => {
+    storeEmail(event.target.value);
+  };
+
+  let readQualification = (event) => {
+    storeQualification(event.target.value);
+  };
+
+  console.log(firstname);
 
   let submit = (event) => {
-    alert(password);
-  }
+    let person = {};
+    person.fullname = firstname+" " + middlename+" " + lastname
+    person.location = location;
+    person.gender = gender;
+    person.state = state;
+    person.contact = contact;
+    person.email = email;
+    person.qualification = qualification;
+
+    const myJSON = JSON.stringify(person, null, 8);
+    const formattedJSON = myJSON.replace(/\n/g, "<br>").replace(/  /g, "&nbsp;&nbsp;");
+    document.querySelector(".output-para").innerHTML = formattedJSON;
+  };
+
   return (
-    <section classNameName="h-100 bg-dark">
+    <section className="h-100 bg-dark">
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col">
@@ -32,115 +83,76 @@ function App() {
                     <div className="row">
                       <div className="col-md-6 mb-4">
                         <div data-mdb-input-init className="form-outline">
-                          <input type="text" id="form3Example1m" className="form-control form-control-lg" />
-                          <label className="form-label" for="form3Example1m" onChange={readFirstName}>First name</label>
+                          <input type="text" id="form3Example1m" className="form-control form-control-lg" required  onChange={readFirstName} />
+                          <label className="form-label" htmlFor="form3Example1m">First name</label>
                         </div>
                       </div>
                       <div className="col-md-6 mb-4">
                         <div data-mdb-input-init className="form-outline">
-                          <input type="text" id="form3Example1n" className="form-control form-control-lg" />
-                          <label className="form-label" for="form3Example1n">Last name</label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="row">
-                      <div className="col-md-6 mb-4">
-                        <div data-mdb-input-init className="form-outline">
-                          <input type="text" id="form3Example1m1" className="form-control form-control-lg" />
-                          <label className="form-label" for="form3Example1m1">Mother's name</label>
-                        </div>
-                      </div>
-                      <div className="col-md-6 mb-4">
-                        <div data-mdb-input-init className="form-outline">
-                          <input type="text" id="form3Example1n1" className="form-control form-control-lg" />
-                          <label className="form-label" for="form3Example1n1">Father's name</label>
+                          <input type="text" id="form3Example1n" className="form-control form-control-lg" required  onChange={readMiddleName} />
+                          <label className="form-label" htmlFor="form3Example1n">Middle name</label>
                         </div>
                       </div>
                     </div>
 
                     <div data-mdb-input-init className="form-outline mb-4">
-                      <input type="text" id="form3Example8" className="form-control form-control-lg" />
-                      <label className="form-label" for="form3Example8">Address</label>
+                      <input type="text" id="form3Example8" className="form-control form-control-lg" required  onChange={readLastName} />
+                      <label className="form-label" htmlFor="form3Example8">Last name</label>
+                    </div>
+
+                    <div data-mdb-input-init className="form-outline mb-4">
+                      <input type="text" id="form3Example9" className="form-control form-control-lg" required  onChange={readLocation} />
+                      <label className="form-label" htmlFor="form3Example9">Address</label>
                     </div>
 
                     <div className="d-md-flex justify-content-start align-items-center mb-4 py-2">
-
                       <h6 className="mb-0 me-4">Gender: </h6>
 
                       <div className="form-check form-check-inline mb-0 me-4">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                          value="option1" />
-                        <label className="form-check-label" for="femaleGender">Female</label>
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" required  id="femaleGender" value="Female" onChange={readGender} />
+                        <label className="form-check-label" htmlFor="femaleGender">Female</label>
                       </div>
 
                       <div className="form-check form-check-inline mb-0 me-4">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                          value="option2" />
-                        <label className="form-check-label" for="maleGender">Male</label>
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" required  id="maleGender" value="Male" onChange={readGender} />
+                        <label className="form-check-label" htmlFor="maleGender">Male</label>
                       </div>
 
                       <div className="form-check form-check-inline mb-0">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                          value="option3" />
-                        <label className="form-check-label" for="otherGender">Other</label>
-                      </div>
-
-                    </div>
-
-                    <div className="row">
-                      <div className="col-md-6 mb-4">
-
-                        <select data-mdb-select-init>
-                          <option value="1">State</option>
-                          <option value="2">Option 1</option>
-                          <option value="3">Option 2</option>
-                          <option value="4">Option 3</option>
-                        </select>
-
-                      </div>
-                      <div className="col-md-6 mb-4">
-
-                        <select data-mdb-select-init>
-                          <option value="1">City</option>
-                          <option value="2">Option 1</option>
-                          <option value="3">Option 2</option>
-                          <option value="4">Option 3</option>
-                        </select>
-
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" required  id="otherGender" value="Other" onChange={readGender} />
+                        <label className="form-check-label" htmlFor="otherGender">Other</label>
                       </div>
                     </div>
 
                     <div data-mdb-input-init className="form-outline mb-4">
-                      <input type="text" id="form3Example9" className="form-control form-control-lg" />
-                      <label className="form-label" for="form3Example9">DOB</label>
+                      <input type="text" id="form3Example9" className="form-control form-control-lg" required onChange={readState} />
+                      <label className="form-label" htmlFor="form3Example9">State</label>
                     </div>
 
                     <div data-mdb-input-init className="form-outline mb-4">
-                      <input type="text" id="form3Example90" className="form-control form-control-lg" />
-                      <label className="form-label" for="form3Example90">Pincode</label>
+                      <input type="text" id="form3Example90" className="form-control form-control-lg" required onChange={readContact} />
+                      <label className="form-label" htmlFor="form3Example90">Contact</label>
                     </div>
 
                     <div data-mdb-input-init className="form-outline mb-4">
-                      <input type="text" id="form3Example99" className="form-control form-control-lg" />
-                      <label className="form-label" for="form3Example99">Course</label>
+                      <input type="text" id="form3Example99" className="form-control form-control-lg" required onChange={readEmail} />
+                      <label className="form-label" htmlFor="form3Example99">Email ID</label>
                     </div>
 
                     <div data-mdb-input-init className="form-outline mb-4">
-                      <input type="text" id="form3Example97" className="form-control form-control-lg" />
-                      <label className="form-label" for="form3Example97">Email ID</label>
+                      <input type="text" id="form3Example97" className="form-control form-control-lg" required onChange={readQualification} />
+                      <label className="form-label" htmlFor="form3Example97">Qualification</label>
                     </div>
 
                     <div className="d-flex justify-content-end pt-3">
                       <button type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-light btn-lg">Reset all</button>
                       <button type="button" data-mdb-button-init data-mdb-ripple-init className="btn btn-warning btn-lg ms-2" onClick={submit}>Submit form</button>
                     </div>
-
                   </div>
                 </div>
                 <div className="col-xl-6 d-xl-block">
-                  <div className="img-fluid" style={{ borderTopLeftRadius: ".25rem", border: "2px solid black" }}>
-                    <p></p>
+                  <div className="img-fluid" style={{ minHeight: "100%", borderTopLeftRadius: ".25rem", margin: "5px" }}>
+                    <p className='output-para'></p>
                   </div>
                 </div>
               </div>
@@ -149,7 +161,6 @@ function App() {
         </div>
       </div>
     </section>
-
   );
 }
 

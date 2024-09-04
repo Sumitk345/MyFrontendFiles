@@ -1,3 +1,19 @@
+*{
+  font-family: 'Poppins';
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important; /* Ensures text color remains the same */
+}
+
+
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
   font-size: 1rem;
   line-height: 2.15;
@@ -10,3 +26,91 @@
   .OutputScreen{
     height: 100vh;
   }
+  .output-para{
+    font-size: 1.2rem;
+  }
+
+  .form-outline{
+    position: relative;
+  }
+
+  .form-label{
+    position: absolute;
+    top: 30%;
+    left: 2%;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+    border-color: initial; /* or set this to the desired border color */
+  }
+  
+  .form-outline{
+    border-radius: 0px !important;
+  }
+
+  /* BUTTONS // ============================== */
+.btn {
+  color: rgba(0, 0, 0, 0.7); /* Adjusted for your muted color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.btn:hover {
+  color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
+}
+
+.btn-link {
+  background: #2196F3; /* Replace with $hl-color */
+  color: rgba(255, 255, 255, 0.8); /* Adjusted for $hl-color */
+}
+
+.btn-link:hover {
+  background: #1976D2; /* Darker shade of $hl-color */
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-submit {
+  background: #2196F3; /* Replace with $hl-color */
+  color: rgba(255, 255, 255, 0.7); /* Adjusted for $hl-color */
+}
+
+.btn-submit:hover {
+  background: #1976D2; /* Darker shade of $hl-color */
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-cancel {
+  background: #eee;
+}
+
+.btn-cancel:hover {
+  background: #ddd; /* Darker shade of #eee */
+  color: rgba(0, 0, 0, 0.7); /* Adjusted for your muted color */
+}
+
+.btn-box {
+  text-align: center;
+  margin: 50px 0;
+}
+
+input:focus ~ label,
+textarea:focus ~ label,
+input:valid ~ label,
+textarea:valid ~ label {
+  top: -8px;
+  font-size: 12px;
+  color: #2196F3; /* Highlight color */
+  background-color: white;
+  left: 8px; /* Spacing from the left */
+  transition: all 0.2s ease;
+}
+
