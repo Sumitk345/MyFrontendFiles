@@ -1,7 +1,7 @@
 const Infocard = ({ data }) => {
       return (
         <div className="card">
-          <div className="card-body">
+          <div className="card-body ">
             <span className="mx-2">{data.date}</span>
             <span className="review">{data.review}</span>
             <span className="fw-bold card-title py-2">
@@ -9,9 +9,10 @@ const Infocard = ({ data }) => {
             </span>
             <img
               src={`${process.env.PUBLIC_URL}/images/${data.image}`}
-              className="card-img-top"
+              className="card-img"
               alt="Car Image"
             />
+            
             <div className="blocks">
               <span>Mileage</span>
               <span>{data.mileage}</span>

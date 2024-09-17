@@ -1,26 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { mockmedicines, mockmedicinescard } from './Index/mockdata';
+import { useState } from 'react';
+import Product from './Product/product';
+import Indexpage from './Index/indexpage';
+import Login from './Login/login';
+import Signup from './Login/signup';
 
 function App() {
+  let [medicines, storemedicines] = useState(mockmedicines);
+  let [medicinecard, storemedicinecard] = useState(mockmedicinescard);
+  let demodata = 80;
+
   return (
-    <div classNameName="App">
-      <Header />
+    <div className="App">
+      <Indexpage medicines={medicines} pageno={demodata} />
+      <Product medicinecard={medicinecard} />
+      <Login />
+      <Signup/>
     </div>
   );
 }
 
-let Header = () => {
-  return (
-    <nav className="navbar bg-success py-3 ">
-      <div className="container-fluid ">
-        <a className="navbar-brand fw-semibold fs-2 text-white">Stanley's Pharmacy</a>
-        <form className="d-flex" role="search">
-        <button type="button" className="btn btn-outline-warning me-2 text-white fw-semibold">Login</button>
-        <button type="button" className="btn btn-outline-light fw-semibold">Sign Up</button>
-        </form>
-      </div>
-    </nav>
-  );
-}
 
 export default App;

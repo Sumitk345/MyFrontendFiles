@@ -4,13 +4,13 @@ let Carousel = () =>{
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src={`${process.env.PUBLIC_URL}/images/car-rent1.jpg`} class="d-block w-100" alt="..."/>
+          <img src={`${process.env.PUBLIC_URL}/images/car-rent1.jpg`} class="d-block w-100 img-fluid" alt="..."/>
         </div>
         <div class="carousel-item">
-          <img src={`${process.env.PUBLIC_URL}/images/car-rent2.jpg`} class="d-block w-100" alt="..."/>
+          <img src={`${process.env.PUBLIC_URL}/images/car-rent2.jpg`} class="d-block w-100 img-fluid" alt="..."/>
         </div>
         <div class="carousel-item">
-          <img src={`${process.env.PUBLIC_URL}/images/car-rent3.jpg`} class="d-block w-100" alt="..."/>
+          <img src={`${process.env.PUBLIC_URL}/images/car-rent3.jpg`} class="d-block w-100 img-fluid" alt="..."/>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

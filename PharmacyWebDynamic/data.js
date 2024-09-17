@@ -1,4 +1,5 @@
 //Main logic
+
 var parent = document.getElementById("rightalign") ;
 var one = document.querySelector(".one .radiobtn");
 

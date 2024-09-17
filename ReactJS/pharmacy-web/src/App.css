@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.image img {
+  margin: 5px;
+  min-width: 180px;
+  min-height: 180px;
+  object-fit: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.image::-webkit-scrollbar,
+.card-section::-webkit-scrollbar,
+body::-webkit-scrollbar 
+{
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.card-container::-webkit-scrollbar{
+  display: none;
+}
+.card {
+  min-width: 230px;
+  transition: all 0.5s ease ;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+.card img {
+  min-height: 200px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+
+.icons {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  font-size: 25px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.icons i {
+  transition: all 0.5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icons i:hover {
+  transform: translateY(-5px);
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+
+}
+
+input:focus::placeholder {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card-container {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  justify-content: center;
+}
+
+.card-container .card {
+  transition: all 0.5s ease;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+
+}
+
+.card-container .card:hover {
+  transform: scale(1.02);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+.login .form-outline{
+  position: relative;
+}
+
+.login .form-label{
+  position: absolute;
+  top: 30%;
+  left: 2%;
+  transition: all 0.7s ease;
+}
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important; /* Ensures text color remains the same */
+}
+
+
+.login input:focus ~ label,
+.login textarea:focus ~ label,
+.login input:valid ~ label,
+.login textarea:valid ~ label {
+  top: -8px;
+  font-size: 12px;
+  color: #2196F3; /* Highlight color */
+  background-color: white;
+  left: 8px; /* Spacing from the left */
+  transition: all 0.2s ease;
 }

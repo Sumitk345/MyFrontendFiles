@@ -26,7 +26,7 @@ body {
   background-position: center;
 }
 
-.card img {
+/* .card img {
   width: 100%;
   padding-bottom: 1vw;
   min-height: 250px;
@@ -34,7 +34,18 @@ body {
   object-fit: cover;
   grid-column: span 2;
   
+} */
+
+.card-img{
+  padding-bottom: 10px;
+  grid-column:  span 2;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover; /* Adjusts the image content */
 }
+
 
 #cards {
   display: grid;
@@ -68,6 +79,12 @@ body {
 
 .card {
   border-radius: 10px;
+  transition: all 0.5s ease;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.card:hover{
+  transform: scale(1.03);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .review {
@@ -75,6 +92,7 @@ body {
   font-size: 1.2rem;
   color: rgb(0, 200, 255);
 }
+
 
 
 @media (max-width: 440px) {
