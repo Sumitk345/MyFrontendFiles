@@ -7,7 +7,7 @@ import Cards from './components/cards';
 import ProductContext from './components/productcontext';
 import Category from './components/category';
 import Subcategory from './components/subcategory';
-import { data } from './components/cards'; 
+import { data } from './components/cards';
 
 
 function App() {
@@ -40,13 +40,17 @@ function App() {
     storeSelectedSubcategory(Array.from(s2));
   };
 
-  
+
   return (
-    <ProductContext.Provider value={{ selectedcategory, selectMultipleFoodCategory, selectedsubcategory, selectMultipleSubCategory, searchQuery, setSearchQuery , dataState }}>
+    <ProductContext.Provider value={{ selectedcategory, selectMultipleFoodCategory, selectedsubcategory, selectMultipleSubCategory, searchQuery, setSearchQuery, dataState }}>
       <div className="App">
         <Header />
         <Carousel />
         <Searchbar />
+        <button className="btn btn-primary mt-5 mb-0 mx-2 d-lg-none my-lg-2 " type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Filters
+        </button>
         <div className="container-fluid row g-0 pb-2" style={{ "height": "calc(100vh - 76.86px)", "maxHeight": "fit-content" }}>
           <div className="col-lg-4 p-2 ps-1 d-flex flex-column ">
             <div className=" container-fluid collapse d-lg-flex flex-column  px-3 flex-lg-grow-1 pt-lg-2"
