@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { uniquecategory } from "../Index/mockdata";
 import ProductContext from "./productcontext";
+import { uniquecategory } from "./cards";
 
 let Category = ({storeselectedcategory}) => {
       let {selectMultipleFoodCategory} = useContext(ProductContext);

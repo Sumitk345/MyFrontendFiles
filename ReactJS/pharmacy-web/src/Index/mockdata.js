@@ -90,8 +90,8 @@ let mockmedicinescard = [
     },
     {
         "Id": "4",
-        "src": "/images/img7.jpg",
-        "Name": "Tata 1mg Vitamin B Complex Capsules",
+        "src": "/images/img21.jpg",
+        "Name": "Intravenous (IV) Injections. IV Injection",
         "Type": "Injection",
         "SubCategory": "Vitamin B Injections",
         "description": "bottle of 60 capsules",
@@ -139,7 +139,7 @@ let mockmedicinescard = [
     {
         "Id": "8",
         "src": "/images/img10.jpg",
-        "Name": "HealthVit Inositol 650mg Capsule",
+        "Name": "HealthVit Inositol 650mg Pills",
         "Type": "Pills",
         "SubCategory": "Women's Health",
         "description": "bottle of 60 capsules",
@@ -175,7 +175,7 @@ let mockmedicinescard = [
     {
         "Id": "11",
         "src": "/images/img2.jpg",
-        "Name": "TrueBasics Multivit Women Tablet",
+        "Name": "TrueBasics Multivit Women Pills",
         "Type": "Pills",
         "SubCategory": "Women's Multivitamins",
         "description": "bottle of 90 Tablet",

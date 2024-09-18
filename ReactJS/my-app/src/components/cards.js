@@ -1,4 +1,6 @@
 import Infocard from "./infocard"
+import { useContext } from "react";
+import ProductContext from "./productcontext";
 
 const data = [
       {
@@ -159,14 +161,44 @@ const data = [
       }
 ];
 
+let uniquecategory = () => {
+      return Array.from(new Set(data.map(item=>item.type)));
+  }
+
+export{
+      data,
+      uniquecategory
+}
+
 
 let Cards = () => {
+      let {selectedsubcategory} = useContext(ProductContext);
+      let {dataState} = useContext(ProductContext);
+      let {selectedcategory} = useContext(ProductContext)
+      let {searchQuery} = useContext(ProductContext);
+
+      const filteredByCategory = selectedcategory.length === 0 || selectedcategory.includes("All")
+            ? dataState
+            : dataState.filter(item => selectedcategory.includes(item.type));
+
+      // Step 2: Filter by selected subcategories
+      const filteredBySubCategory = selectedsubcategory.length === 0 || selectedsubcategory.includes("All")
+            ? filteredByCategory
+            : filteredByCategory.filter(item => selectedsubcategory.includes(item.location));
+
+
+      const filteredBySubCategorySearch = filteredBySubCategory.filter(item =>
+            item.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+
       return (
-            <section id="cards" className="m-3">
-                  {data.map(item =>
+            <div className="card-container p-2 p-lg-0 pt-lg-2 ps-lg-1 overflow-y-scroll" style={{ maxHeight: "100%" }}>
+                  {filteredBySubCategorySearch.map(item =>
                         <Infocard data={item} />
                   )}
-            </section>
+                  <hr className="m-0 p-0"></hr>
+                  <p className="d-block m-0"></p>
+            </div>
       )
 }
 

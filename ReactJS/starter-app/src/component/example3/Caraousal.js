@@ -3,7 +3,7 @@
 let Carousal = () => {
     return (
         <div>
-            <div id="carouselExample" className="carousel slide">
+            <div id="carouselExample" className="carousel slide" data-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src="https://placehold.co/1000x200/grey/white?text=carousal-1" className="d-block w-100" alt="..." />

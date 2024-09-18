@@ -2,12 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+
 }
 
+.card-body , .card-container::-webkit-scrollbar{
+  display: none;
+}
 body {
   height: 100vh;
   background-color: aliceblue;
-  font-family: 'Poppins', sans-serif;
 }
 
 .top-logos {
@@ -40,6 +45,7 @@ body {
   padding-bottom: 10px;
   grid-column:  span 2;
   width: 100%;
+  min-height: 170px;
   max-width: 100%;
   height: auto;
   max-height: 200px;
@@ -47,21 +53,23 @@ body {
 }
 
 
-#cards {
+.card-container{
   display: grid;
+  column-gap: 10px;
+  row-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 36px;
 }
 
 .card-body {
   display: grid;
+  min-width: 100%;
   grid-template-columns: 1fr 1fr;
   padding: 5px;
 }
 
 .card-body .blocks {
-  margin-bottom: 1.2rem;
+  margin-bottom: 7px;
 }
 
 .card-body span {
@@ -78,10 +86,12 @@ body {
 }
 
 .card {
+  max-width: 100%;
   border-radius: 10px;
   transition: all 0.5s ease;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
 .card:hover{
   transform: scale(1.03);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -89,7 +99,7 @@ body {
 
 .review {
   text-align: right;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: rgb(0, 200, 255);
 }
 
@@ -112,13 +122,46 @@ body {
   }
 }
 
+@media (min-width: 1024px){
+  .card {
+    min-width: 230px;
+    max-width: 240px;
+    transition: all 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+
 .card-title{
-  color: red;
-  font-size: 1.2rem;
+  color: rgb(6, 6, 6);
+  font-size: 1.1rem;
   grid-column:  span 2;
+  font-family: 'Poppins';
+  letter-spacing: 1px;
 }
 
 .card-title strong{
   color: rgb(67, 67, 67);
   font-weight: 400;
+}
+
+.carousel-item img{
+  object-fit: cover;
+  max-height: 400px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+
+}
+
+.logo{
+  width: 130px;
+  height: 60px;
 }

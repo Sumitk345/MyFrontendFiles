@@ -19,9 +19,9 @@ function App() {
       {/* <Example4Home /> */}
       {/* <Example5Home /> */}
       {/* <Example6Home /> */}
-      <Example7Home />
+      {/* <Example7Home /> */}
       {/* <Example8Home /> */}
-      {/* <Example9Home /> */}
+      <Example9Home />
 
       
     </div>

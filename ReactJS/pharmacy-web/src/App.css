@@ -24,6 +24,7 @@ body::-webkit-scrollbar
 .card-container::-webkit-scrollbar{
   display: none;
 }
+
 .card {
   min-width: 230px;
   transition: all 0.5s ease ;
@@ -77,7 +78,7 @@ input:focus::placeholder {
 .card-container {
   display: grid;
   column-gap: 10px;
-  row-gap: 20px;
+  row-gap: 15px;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   justify-content: center;
 }
@@ -85,8 +86,6 @@ input:focus::placeholder {
 .card-container .card {
   transition: all 0.5s ease;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-
-
 }
 
 .card-container .card:hover {
@@ -130,4 +129,18 @@ textarea:-webkit-autofill:focus {
   background-color: white;
   left: 8px; /* Spacing from the left */
   transition: all 0.2s ease;
+}
+
+
+@media (min-width: 1024px){
+  .card {
+    min-width: 230px;
+    max-width: 240px;
+    transition: all 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(4,1fr);
+  }
 }
