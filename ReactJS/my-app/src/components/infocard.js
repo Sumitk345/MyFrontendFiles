@@ -4,8 +4,10 @@ const Infocard = ({ data }) => {
       return (
         <div className="card flex-grow-1">
           <div className="card-body border d-flex  flex-column">
+            <div className="d-flex justify-content-between">
             <span className="">{data.date}</span>
             <span className="review">{data.review}</span>
+            </div>
             <span className="fw-light card-title py-2">
               {data.title}({data.type})
             </span>

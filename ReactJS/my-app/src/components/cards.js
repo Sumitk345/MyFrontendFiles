@@ -11,7 +11,7 @@ const data = [
             "type": "Sedan",
             "image": "car1.jpg",
             "mileage": "45000 KM",
-            "location": "Delhi",
+            "location": "Mumbai",
             "engine": "3.5 Diesel",
             "transmission": "Automatic",
             "price": "Rs 1,60,000"
