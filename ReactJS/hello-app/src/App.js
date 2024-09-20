@@ -48,14 +48,12 @@ let Header = () => {
 
 let ImageList = () => {
   return (
-    <div>
-      <marquee>
-        <img src="./images/flight1.jpg" className="img-thumbnail" />
-        <img src="./images/flight2.jpg" className="img-thumbnail" />
-        <img src="./images/flight3.jpg" className="img-thumbnail" />
-        <img src="./images/flight4.png" className="img-thumbnail" />
-        <img src="./images/flight5.jpg" className="img-thumbnail" />
-      </marquee>
+    <div className="container-img g-0">
+      <img src="./images/flight1.jpg" className="img-thumbnail" />
+      <img src="./images/flight2.jpg" className="img-thumbnail" />
+      <img src="./images/flight3.jpg" className="img-thumbnail" />
+      <img src="./images/flight4.png" className="img-thumbnail" />
+      <img src="./images/flight5.jpg" className="img-thumbnail" />
     </div>
   )
 }
