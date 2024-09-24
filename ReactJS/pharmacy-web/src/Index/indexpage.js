@@ -8,7 +8,7 @@ let Indexpage = ({medicines,pageno}) => {
       return (
             <>
             {/* <h1>{pageno}</h1> */}
-            <Header />
+            {/* <Header /> */}
             <Gallery/>
             <Details/>
             <Cardgallery medicines={medicines} count={count}/>

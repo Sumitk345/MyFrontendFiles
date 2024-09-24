@@ -14,20 +14,44 @@
   object-fit: cover;
 }
 
-.image::-webkit-scrollbar,
-.card-section::-webkit-scrollbar,
-body::-webkit-scrollbar 
-{
+.card-section::-webkit-scrollbar {
+  width: 5px;
+  height: 10px;
+}
+
+.card-section::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.card-section::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+  border: 2px solid #f1f1f1;
+}
+
+.card-section::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.card-section::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+.image::-webkit-scrollbar , body::-webkit-scrollbar {
   display: none;
 }
 
-.card-container::-webkit-scrollbar{
+.card-container::-webkit-scrollbar {
   display: none;
 }
 
-.card {
+.card-gallery .card {
+  max-width: 230px;
   min-width: 230px;
-  transition: all 0.5s ease ;
+  min-height: 361px;
+  transition: all 0.5s ease;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
@@ -94,11 +118,11 @@ input:focus::placeholder {
 }
 
 
-.login .form-outline{
+.login .form-outline {
   position: relative;
 }
 
-.login .form-label{
+.login .form-label {
   position: absolute;
   top: 30%;
   left: 2%;
@@ -115,25 +139,28 @@ textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 1000px white inset !important;
   box-shadow: 0 0 0 1000px white inset !important;
-  -webkit-text-fill-color: #000 !important; /* Ensures text color remains the same */
+  -webkit-text-fill-color: #000 !important;
+  /* Ensures text color remains the same */
 }
 
 
-.login input:focus ~ label,
-.login textarea:focus ~ label,
-.login input:valid ~ label,
-.login textarea:valid ~ label {
+.login input:focus~label,
+.login textarea:focus~label,
+.login input:valid~label,
+.login textarea:valid~label {
   top: -8px;
   font-size: 12px;
-  color: #2196F3; /* Highlight color */
+  color: #2196F3;
+  /* Highlight color */
   background-color: white;
-  left: 8px; /* Spacing from the left */
+  left: 8px;
+  /* Spacing from the left */
   transition: all 0.2s ease;
 }
 
 
-@media (min-width: 1024px){
-  .card {
+@media (min-width: 1024px) {
+  .card-container .card {
     min-width: 230px;
     max-width: 240px;
     transition: all 0.5s ease;
@@ -141,6 +168,10 @@ textarea:-webkit-autofill:focus {
   }
 
   .card-container {
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
+}
+
+a:hover {
+  text-decoration: none;
 }

@@ -27,7 +27,7 @@ let mockmedicines = [
     {
         "src": "/images/img6.jpg",
         "title": "Metformin",
-        "description": "Metformin is used to control blood sugar levels in people with type 2 diabetes."
+        "description": "Metformin is used to control blood sugar levels  2 diabetes."
     },
     {
         "src": "/images/img7.jpg",

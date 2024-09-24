@@ -3,8 +3,9 @@ import { useContext } from "react";
 import ProductContext from "./productcontext";
 
 let Productgallery = ({ medicinecard, selectedcategory }) => {
-      let {selectedsubcategory} = useContext(ProductContext);
-      let {searchQuery} = useContext(ProductContext);
+      let { selectedsubcategory } = useContext(ProductContext);
+      let { searchQuery } = useContext(ProductContext);
+      let { selectSort } = useContext(ProductContext);
 
       const filteredByCategory = selectedcategory.length === 0 || selectedcategory.includes("All")
             ? medicinecard
@@ -20,10 +21,32 @@ let Productgallery = ({ medicinecard, selectedcategory }) => {
             item.receipename.toLowerCase().includes(searchQuery.toLowerCase())
       );
 
+      const filteredBySort = selectSort === ""
+            ? filteredBySubCategorySearch
+            : filteredBySubCategorySearch.sort((a, b) => {
+                  if (selectSort === "A-Z") {
+                        return a.receipename.localeCompare(b.receipename);
+                  }
+                   else if (selectSort === "Z-A") {
+                        return b.receipename.localeCompare(a.receipename);
+                  }
+                   else if (selectSort === "high-low") {
+                        return parseFloat(b.details.cost.replace("Rs.", "")) - parseFloat(a.details.cost.replace("Rs.", ""));
+                  }
+                   else if (selectSort === "low-high") {
+                        return parseFloat(a.details.cost.replace("Rs.", "")) - parseFloat(b.details.cost.replace("Rs.", ""));
+                  } 
+                  else {
+                        return 0;
+                  }
+            });
+
+
+
       return (
 
-            <div className="card-container p-2 p-lg-0 pt-lg-2 ps-lg-1 overflow-y-scroll" style={{ maxHeight: "100%" }}>
-                  
+            <div className="card-container p-4 p-lg-3 pt-lg-2 ps-lg-1 overflow-y-scroll " style={{ maxHeight: "100%" }}>
+
                   {filteredBySubCategorySearch.map(singlemedicine =>
                         <Singleproduct singlemedicinecard={singlemedicine} />
                   )

@@ -23,7 +23,7 @@ let Productgallery = ({ medicinecard, selectedcategory }) => {
 
       return (
 
-            <div className="card-container p-2 p-lg-0 pt-lg-2 ps-lg-1 overflow-y-scroll" style={{ maxHeight: "100%" }}>
+            <div className="card-container p-2 p-lg-0 pt-lg-2 ps-lg-1 overflow-y-scroll pb-lg-2" style={{ maxHeight: "100%" }}>
                   
                   {filteredBySubCategorySearch.map(singlemedicine =>
                         <Singleproduct singlemedicinecard={singlemedicine} />

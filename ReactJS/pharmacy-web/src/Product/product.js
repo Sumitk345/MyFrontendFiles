@@ -39,7 +39,7 @@ let Product = ({ medicinecard }) => {
       return (
             <>
                   <ProductContext.Provider value={{ selectedcategory, selectMultipleFoodCategory , selectedsubcategory , selectMultipleSubCategory ,searchQuery, setSearchQuery }}>
-                        <Header />
+                        {/* <Header /> */}
                         <button className="btn btn-primary my-5 mx-2 d-lg-none " type="button" data-bs-toggle="collapse"
                               data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                               Filters

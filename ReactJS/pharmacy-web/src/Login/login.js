@@ -3,7 +3,7 @@ import Header from "../Index/header";
 let Login = () => {
       return (
             <>
-                  <Header />
+                  {/* <Header /> */}
                   <div className="container d-flex justify-content-center align-content-center m-auto row g-sm-4" style={{ "height": "calc(100vh - 76.86px)" }}>
                         <div className="container border border-2 p-6 m-sm-3" style={{ maxWidth: "500px" }}>
                               <form className="login d-flex flex-column gap-6 ">

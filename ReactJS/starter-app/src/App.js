@@ -8,6 +8,10 @@ import Example6Home from './component/example6/Index';
 import Example7Home from './component/example7/Index';
 import Example8Home from './component/example8/Index';
 import Example9Home from './component/example9/Index';
+import Example10Home from './component/example10/Index';
+import Example11Home from './component/example11/Index';
+import Example12Home from './component/example12/Index';
+import Example13Home from './component/example13';
 
 function App() {
   return (
@@ -21,7 +25,11 @@ function App() {
       {/* <Example6Home /> */}
       {/* <Example7Home /> */}
       {/* <Example8Home /> */}
-      <Example9Home />
+      {/* <Example9Home /> */}
+      {/* <Example10Home/> */}
+      {/* <Example11Home/> */}
+      {/* <Example12Home/> */}
+      <Example13Home/>
 
       
     </div>

@@ -9,6 +9,7 @@ import { useState } from 'react';
 let Product = ({ medicinecard }) => {
       let [selectedcategory, storeselectedcategory] = useState([]);
       let [selectedsubcategory, storeSelectedSubcategory] = useState([]);
+      let [selectSort , setselectSort] = useState("");
       const [filteredProducts, setFilteredProducts] = useState(medicinecard);
       const [searchQuery, setSearchQuery] = useState('');
 
@@ -37,7 +38,7 @@ let Product = ({ medicinecard }) => {
 
       return (
             <>
-                  <ProductContext.Provider value={{ selectedcategory, selectMultipleFoodCategory , selectedsubcategory , selectMultipleSubCategory ,searchQuery, setSearchQuery }}>
+                  <ProductContext.Provider value={{ selectedcategory, selectMultipleFoodCategory , selectedsubcategory , selectMultipleSubCategory ,searchQuery, setSearchQuery , selectSort , setselectSort}}>
                         <button className="btn btn-primary my-5 mx-2 d-lg-none " type="button" data-bs-toggle="collapse"
                               data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                               Filters

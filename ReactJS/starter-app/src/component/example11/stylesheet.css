@@ -1,0 +1,18 @@
+
+
+.navigation{
+    list-style: none;
+    padding:0px;
+    text-align: center;
+}
+
+.navigation li{
+    border:1px solid blue;
+    background-color: blue;
+    padding:10px;
+    margin:3px 10px 3px 10px;
+    text-align: center;
+    display: inline-block;
+    color:white;
+    width:100px;
+}
